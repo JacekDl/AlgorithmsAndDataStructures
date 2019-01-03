@@ -10,7 +10,7 @@ public class QuickSortTest {
 		Lista[2] = 4;
 		Lista[3] = 37;
 		Lista[4] = -150;
-		Lista[5] = -20;
+		Lista[5] = -20;1
 		Lista[6] = 14;
 		Lista[7] = 60;
 		Lista[8] = 13;
