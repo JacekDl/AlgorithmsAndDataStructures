@@ -1,8 +1,11 @@
 package sortowanieprzezwybieranie;
 
+//TODO please rename polish -> english 
 public class SortowaniePrzezWybieranie {
 
 	public static void main(String[] args) {
+		
+		//TODO Jacek - please refactor as it is in SortowaniePrzezWstawianie
 		int Lista[] = new int[16];  
 		Lista[0] = 52;
 		Lista[1] = 82;

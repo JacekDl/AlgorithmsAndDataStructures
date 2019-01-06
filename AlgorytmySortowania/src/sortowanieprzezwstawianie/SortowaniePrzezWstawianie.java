@@ -1,51 +1,59 @@
 package sortowanieprzezwstawianie;
 
+import java.util.List;
+
+import logging.ArrayLogger;
+import testdata.TestDataGenerator;
+
+//TODO please rename polish -> english 
 public class SortowaniePrzezWstawianie {
 
+	public void sortByInsertion(int[] list) {
+		
+		for(int i = 1;i<list.length;i++) {
+			int klucz = list[i];
+			int j = i - 1;
+			while(j>-1 && list[j]>klucz) {
+				list[j+1]=list[j];
+				j--;
+			}
+			list[j+1]=klucz;
+		}
+	}
+	
+	// example - short, meaningful methods
+	private void doSmth(List<Integer> list) {
+		
+		if(isEmpty(list)) {
+			//do smth
+		}
+
+	}
+	
+	private static boolean isEmpty(List<Integer> list) {
+		return list == null || list.size() == 0;
+	}	
+	
 	public static void main(String[] args) {
-		int Lista[] = new int[16];  
-		Lista[0] = 52;
-		Lista[1] = 82;
-		Lista[2] = 4;
-		Lista[3] = 37;
-		Lista[4] = 47;
-		Lista[5] = -20;
-		Lista[6] = 14;
-		Lista[7] = 60;
-		Lista[8] = 13;
-		Lista[9] = 35;
-		Lista[10] = -42;
-		Lista[11] = 8;
-		Lista[12] = -1;
-		Lista[13] = 24;
-		Lista[14] = 10;
-		Lista[15] = -2;
+		
+		SortowaniePrzezWstawianie sorting = new SortowaniePrzezWstawianie();
+		
+		TestDataGenerator generator = new TestDataGenerator();
+		generator.generateRandomNumbers(16, 100);
+		
+		int list[] = generator.generateRandomNumbers(16, 100);
+		
 
 		//Wyœwietla originaln¹ listê - przed posortowaniem.
 		System.out.print("Originalna lista: ");
-		for(int i =0;i<Lista.length;i++) {	
-			System.out.print(Lista[i] + " ");
-		}
-		System.out.println("");
-
+		ArrayLogger.log(list);
+	
 		//Sortowanie przez wstawianie.
-		
-		for(int i = 1;i<Lista.length;i++) {
-			int klucz = Lista[i];
-			int j = i - 1;
-			while(j>-1 && Lista[j]>klucz) {
-				Lista[j+1]=Lista[j];
-				j--;
-			}
-			Lista[j+1]=klucz;
-		}
+		sorting.sortByInsertion(null);
 
 		//Wyœwietla posortowan¹ listê.
 		System.out.print("Posortowana lista: ");
-		for (int i=0; i <Lista.length;i++) {
-			System.out.print(Lista[i] + " ");
-		}
-		System.out.println("");
+		ArrayLogger.log(list);
 
 	}
 

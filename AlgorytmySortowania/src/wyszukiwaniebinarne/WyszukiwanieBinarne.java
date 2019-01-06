@@ -1,8 +1,12 @@
 package wyszukiwaniebinarne;
 
+//TODO please rename polish -> english 
 public class WyszukiwanieBinarne {
 
 	public static void main(String[] args) {
+		
+		//TODO Jacek - please refactor as it is in SortowaniePrzezWstawianie
+		
 		//Tworzy posortowan¹ (niemalej¹c¹) listê.
 		int Lista[] = new int[16];  
 		Lista[0] = -1;
