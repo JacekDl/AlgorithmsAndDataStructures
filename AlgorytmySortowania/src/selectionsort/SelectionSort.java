@@ -1,12 +1,36 @@
 package selectionsort;
 
+import logging.ArrayLogger;
+import testdata.TestDataGenerator;
+
 //TODO please rename polish -> english. Jacek: done
 public class SelectionSort {
 
+	public void sortBySelection(int[] list){
+		//Sorts list.
+		for(int i = 0; i < list.length-1; i++) {
+			int min = i;
+			for(int j = i+1; j< list.length;j++) {
+				if(list[j]<list[min]) {
+					min = j;
+				}
+			}
+			int l = list[i];
+			list[i] = list[min];
+			list[min] = l;
+		}
+	}
+
 	public static void main(String[] args) {
-		
+
 		//TODO Jacek - please refactor as it is in InsertionSort
-		int list[] = new int[16];  
+		SelectionSort sorting = new SelectionSort(); //Creates new reference 'sorting'
+													//and links it with object type SelectionSort.
+		
+		TestDataGenerator generator = new TestDataGenerator();
+		int[] newList = generator.generateRandomNumbers(10, 100);
+		
+		/*int list[] = new int[16];  
 		list[0] = 52;
 		list[1] = 82;
 		list[2] = 4;
@@ -23,35 +47,26 @@ public class SelectionSort {
 		list[13] = 24;
 		list[14] = 10;
 		list[15] = -2;
-		
+*/
 		//Prints list before sorting.
 		System.out.print("List before sorting: ");
-		for(int i =0;i<list.length;i++) {	
+		ArrayLogger.log(newList);
+		/*for(int i =0;i<list.length;i++) {	
 			System.out.print(list[i] + " ");
 		}
-		System.out.println("");
-		
-		//Sorts list.
-		for(int i = 0; i < list.length-1; i++) {
-			int min = i;
-			for(int j = i+1; j< list.length;j++) {
-				if(list[j]<list[min]) {
-					min = j;
-				}
-			}
-			int l = list[i];
-			list[i] = list[min];
-			list[min] = l;
-		}
-	
-		
+		System.out.println("");*/
+
+		sorting.sortBySelection(newList);
+
+
 		//Prints sorted list.
 		System.out.print("Sorted list: ");
-		for (int i=0; i <list.length;i++) {
+		ArrayLogger.log(newList);
+		/*for (int i=0; i <list.length;i++) {
 			System.out.print(list[i] + " ");
 		}
-		System.out.println("");
-		
+		System.out.println("");*/
+
 		/*//Wyszukuje wartoœæ binarnie.
 		int p = 0;
 		int r = Lista.length-1;
