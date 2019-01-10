@@ -3,7 +3,7 @@ package binarysearch;
 //TODO please rename polish -> english Jacek:done
 public class BinarySearch {
 
-	public void searchBinarly(int[] list, int value) {
+	public void searchBinarily(int[] list, int value) {
 		int p = 0;
 		int r = list.length - 1;
 		int q;
