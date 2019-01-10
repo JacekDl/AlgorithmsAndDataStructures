@@ -17,4 +17,9 @@ public class TestDataGenerator {
 
 	}
 
+	public int generateRandomValue(int bound) {
+		Random random = new Random();
+		int result = random.nextInt(bound);
+		return result;
+	}
 }
