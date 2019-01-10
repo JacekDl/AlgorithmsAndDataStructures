@@ -5,7 +5,7 @@ import java.util.List;
 import logging.ArrayLogger;
 import testdata.TestDataGenerator;
 
-//TODO please rename polish -> english 
+//TODO please rename polish -> english; Jacek: done.
 public class InsertionSort {
 
 	public void sortByInsertion(int[] list) {
@@ -37,21 +37,21 @@ public class InsertionSort {
 		InsertionSort sorting = new InsertionSort();
 
 		TestDataGenerator generator = new TestDataGenerator();
-		generator.generateRandomNumbers(16, 100);
+		//generator.generateRandomNumbers(16, 100);
 
-		int list[] = generator.generateRandomNumbers(16, 100);
+		int[] newList = generator.generateRandomNumbers(16, 100);
 
 
 		//Prints list before sorting.
-		System.out.print("Originalna lista: ");
-		ArrayLogger.log(list);
+		System.out.print("List before sorting: ");
+		ArrayLogger.log(newList);
 
 		//Insertion sort.
-		sorting.sortByInsertion(null);
+		sorting.sortByInsertion(newList);
 
 		//Prints sorted list.
-		System.out.print("Posortowana lista: ");
-		ArrayLogger.log(list);
+		System.out.print("Sorted list: ");
+		ArrayLogger.log(newList);
 
 	}
 
