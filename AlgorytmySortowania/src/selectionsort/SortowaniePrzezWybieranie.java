@@ -1,4 +1,4 @@
-package sortowanieprzezwybieranie;
+package selectionsort;
 
 //TODO please rename polish -> english 
 public class SortowaniePrzezWybieranie {

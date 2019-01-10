@@ -1,4 +1,4 @@
-package sortowanieprzezwstawianie;
+package insertionsort;
 
 import java.util.List;
 

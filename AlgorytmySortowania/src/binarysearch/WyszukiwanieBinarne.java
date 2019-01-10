@@ -1,4 +1,4 @@
-package wyszukiwaniebinarne;
+package binarysearch;
 
 //TODO please rename polish -> english 
 public class WyszukiwanieBinarne {
