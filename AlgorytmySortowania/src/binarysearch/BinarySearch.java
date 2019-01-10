@@ -1,55 +1,60 @@
 package binarysearch;
 
-//TODO please rename polish -> english 
+//TODO please rename polish -> english Jacek:done
 public class BinarySearch {
 
-	public static void main(String[] args) {
-		
-		//TODO Jacek - please refactor as it is in SortowaniePrzezWstawianie
-		
-		//New sorted list.
-		int list[] = new int[16];  
-		list[0] = -1;
-		list[1] = 2;
-		list[2] = 4;
-		list[3] = 5;
-		list[4] = 8;
-		list[5] = 10;
-		list[6] = 14;
-		list[7] = 24;
-		list[8] = 35;
-		list[9] = 37;
-		list[10] = 42;
-		list[11] = 47;
-		list[12] = 53;
-		list[13] = 60;
-		list[14] = 71;
-		list[15] = 82;
-
+	public void searchBinarly(int[] list, int value) {
 		int p = 0;
-		int r = list.length-1;
+		int r = list.length - 1;
 		int q;
-		int value = 2;
-
 		while (p <= r) {
-			q = Math.floorDiv(p+r, 2);
-			/*System.out.println("Wartoœæ p: " + p);
-			System.out.println("Wartoœæ q: " + q);
-			System.out.println("Wartoœæ r: " + r);
-			System.out.println("");*/
+			q = Math.floorDiv(p + r, 2);
+			/*
+			 * System.out.println("Wartoœæ p: " + p); System.out.println("Wartoœæ q: " + q);
+			 * System.out.println("Wartoœæ r: " + r); System.out.println("");
+			 */
 			if (list[q] == value) {
 				System.out.print("Searched value position on the list: " + q);
 				break;
-			}else if(list[q] > value) {
-				r = q-1;
-			}else if(list[q] < value) {
-				p = q+1;
+			} else if (list[q] > value) {
+				r = q - 1;
+			} else if (list[q] < value) {
+				p = q + 1;
 			}
-			//Wyœwietla komunikat o niepowodzeniu wyszukiwania.
+			//Prints information if search is unsuccessful.
 			if (list[q] != value && p > r) {
 				System.out.println("Searched value is not on the list.");
 				break;
 			}
-		}	
+		}
+	}
+	public static void main(String[] args) {
+
+		// TODO Jacek - please refactor as it is in InsertionSort
+
+		// New sorted list.
+		int somelist[] = new int[16];
+		somelist[0] = -1;
+		somelist[1] = 2;
+		somelist[2] = 4;
+		somelist[3] = 5;
+		somelist[4] = 8;
+		somelist[5] = 10;
+		somelist[6] = 14;
+		somelist[7] = 24;
+		somelist[8] = 35;
+		somelist[9] = 37;
+		somelist[10] = 42;
+		somelist[11] = 47;
+		somelist[12] = 53;
+		somelist[13] = 60;
+		somelist[14] = 71;
+		somelist[15] = 82;
+
+		int value = 4;
+		
+		BinarySearch search = new BinarySearch();
+		search.searchBinarly(somelist, value);
+		
 	}
 }
