@@ -6,52 +6,50 @@ import logging.ArrayLogger;
 import testdata.TestDataGenerator;
 
 //TODO please rename polish -> english 
-public class SortowaniePrzezWstawianie {
+public class InsertionSort {
 
 	public void sortByInsertion(int[] list) {
-		
+
 		for(int i = 1;i<list.length;i++) {
-			int klucz = list[i];
+			int key = list[i];
 			int j = i - 1;
-			while(j>-1 && list[j]>klucz) {
+			while(j>-1 && list[j]>key) {
 				list[j+1]=list[j];
 				j--;
 			}
-			list[j+1]=klucz;
+			list[j+1]=key;
 		}
 	}
-	
+
 	// example - short, meaningful methods
 	private void doSmth(List<Integer> list) {
-		
 		if(isEmpty(list)) {
 			//do smth
 		}
-
 	}
-	
+
 	private static boolean isEmpty(List<Integer> list) {
 		return list == null || list.size() == 0;
 	}	
-	
+
 	public static void main(String[] args) {
-		
-		SortowaniePrzezWstawianie sorting = new SortowaniePrzezWstawianie();
-		
+
+		InsertionSort sorting = new InsertionSort();
+
 		TestDataGenerator generator = new TestDataGenerator();
 		generator.generateRandomNumbers(16, 100);
-		
-		int list[] = generator.generateRandomNumbers(16, 100);
-		
 
-		//Wyœwietla originaln¹ listê - przed posortowaniem.
+		int list[] = generator.generateRandomNumbers(16, 100);
+
+
+		//Prints list before sorting.
 		System.out.print("Originalna lista: ");
 		ArrayLogger.log(list);
-	
-		//Sortowanie przez wstawianie.
+
+		//Insertion sort.
 		sorting.sortByInsertion(null);
 
-		//Wyœwietla posortowan¹ listê.
+		//Prints sorted list.
 		System.out.print("Posortowana lista: ");
 		ArrayLogger.log(list);
 
