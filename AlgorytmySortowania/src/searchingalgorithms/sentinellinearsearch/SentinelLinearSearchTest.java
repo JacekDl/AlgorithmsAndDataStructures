@@ -21,32 +21,16 @@ public class SentinelLinearSearchTest {
 		// Prints searched value.
 		ValueLogger.logValue(value);
 
-		
-		// Podstawia ostatni element listy do zmiennej 'last'.
-		int last = somelist[somelist.length - 1]; 
-		somelist[somelist.length - 1] = value; // Zastêpuje ostatni element listy wartoœci¹ poszukiwan¹.
+		// Creates reference type SentinelLinearSearch and links it with new object
+		// 'next'.
+		SentinelLinearSearch next = new SentinelLinearSearch();
+		int answer = next.searchLinearlyWithSentinel(somelist, value);
 
-		// Porównuje zawartoœæ listy z wartoœci¹ poszukiwan¹.
-		// Zwraca i gdy znajdzie wartoœæ poszukiwan¹ lub gdy dojdzie do ostatniego
-		// elementu listy.
-		int i = 0;
-		while (somelist[i] != value) {
-			i++;
-		}
-
-		// Przywraca pierwotn¹ wartoœæ ostatniego elementu listy i tym samym pierwotny
-		// kszta³t listy.
-		somelist[somelist.length - 1] = last;
-
-		// Jeœli poszukiwana wartoœæ zosta³a znaleziona przed dotarciem do ostatniego
-		// elementu listy,
-		// lub gdy ostatni element przywróconej listy jest poszukiwan¹ wartoœci¹,
-		// wyœwietla komunikat powodzenia wyszukiwania.
-		if (i < somelist.length - 1 || somelist[somelist.length - 1] == value) {
-			System.out.print("Wyszukiwana wartoœæ znajduje siê pod indeksem nr: " + i);
-			// W przeciwnym razie wyœwietla niepowodzenie wyszukiwania.
+		// Prints results of search.
+		if (answer < somelist.length - 1 || somelist[somelist.length - 1] == value) {
+			System.out.print("Searched value position number: " + answer);
 		} else {
-			System.out.print("Wyszukiwana wartoœæ nie znajduje siê na liœcie.");
+			System.out.print("Searched value is not on the list.");
 		}
 
 	}
