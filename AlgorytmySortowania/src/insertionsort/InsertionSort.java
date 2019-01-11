@@ -23,8 +23,8 @@ public class InsertionSort {
 	 * private void doSmth(List<Integer> list) { if (isEmpty(list)) { // do smth } }
 	 */
 
-	private static boolean isEmpty(List<Integer> list) {
+	/*private static boolean isEmpty(List<Integer> list) {
 		return list == null || list.size() == 0;
 	}
-
+*/
 }

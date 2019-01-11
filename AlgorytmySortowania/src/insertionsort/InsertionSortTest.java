@@ -7,17 +7,14 @@ import testdata.TestDataGenerator;
 public class InsertionSortTest {
 	public static void main(String[] args) {
 
-		InsertionSort sorting = new InsertionSort();
-
 		TestDataGenerator generator = new TestDataGenerator();
-		// generator.generateRandomNumbers(16, 100);
-
 		int[] newlist = generator.generateRandomNumbers(20, 100);
 
 		// Prints list before sorting.
 		System.out.print("List before sorting: ");
 		ArrayLogger.log(newlist);
 
+		InsertionSort sorting = new InsertionSort();
 		// Insertion sort.
 		sorting.sortByInsertion(newlist);
 

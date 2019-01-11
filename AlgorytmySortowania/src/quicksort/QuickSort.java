@@ -2,21 +2,24 @@ package quicksort;
 
 public class QuickSort {
 
-	public static void QSWynik() {
+	public void sortByQuickSort(int[] list, int left, int right) {
+		if (left >= right) {
+			return;
+		}
 		
 	}
-	
-	private String someField;
 
-	public String getSomeField() {
-		return someField;
+	public int partition(int[] list, int left, int right) {
+		int q = left;
+		return q;
 	}
 
-	public void setSomeField(String someField) {
-		this.someField = someField;
-	}
-	
-	
+	/*
+	 * private String someField;
+	 * 
+	 * public String getSomeField() { return someField; }
+	 * 
+	 * public void setSomeField(String someField) { this.someField = someField; }
+	 */
 
-	
 }
