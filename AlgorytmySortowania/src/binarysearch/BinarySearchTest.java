@@ -15,6 +15,7 @@ public class BinarySearchTest {
 		// Generates list of random values.
 		TestDataGenerator generator = new TestDataGenerator();
 		int[] somelist = generator.generateRandomNumbers(20, 100);
+		// Generates a random value.
 		int value = generator.generateRandomValue(100);
 
 		// Prints searched value.
