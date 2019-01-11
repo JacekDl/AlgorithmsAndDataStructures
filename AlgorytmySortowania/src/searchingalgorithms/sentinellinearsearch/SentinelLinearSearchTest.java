@@ -8,13 +8,12 @@ public class SentinelLinearSearchTest {
 
 	public static void main(String[] args) {
 		// Generates list of random values.
-		 TestDataGenerator generator = new TestDataGenerator();
-		 int[] somelist = generator.generateRandomNumbers(20, 100);
-		
+		TestDataGenerator generator = new TestDataGenerator();
+		int[] somelist = generator.generateRandomNumbers(20, 100);
 
 		// Generates a random value.
 		int value = generator.generateRandomValue(100);
-		
+
 		// Prints random list.
 		System.out.print("Searched list: ");
 		ArrayLogger.log(somelist);
