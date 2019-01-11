@@ -1,6 +1,6 @@
 package sentinellinearsearch;
 
-public class LinioweZWartownikiem {
+public class SentinelLinearSearchTest {
 
 	public static void main(String[] args) {
 		int Lista[] = new int[12];
