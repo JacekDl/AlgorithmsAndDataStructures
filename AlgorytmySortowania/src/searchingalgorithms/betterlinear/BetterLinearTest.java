@@ -1,8 +1,9 @@
 package betterlinear;
 
-public class LepszeLiniowe {
+public class BetterLinearTest {
 
 	public static void main(String[] args) {
+		
 		int Lista[] = new int[11];
 		Lista[0] = 15;
 		Lista[1] = 23;
