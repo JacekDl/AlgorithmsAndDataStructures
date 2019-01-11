@@ -11,10 +11,9 @@ public class LinearSearchTest {
 		// Generates list of random values.
 		TestDataGenerator generator = new TestDataGenerator();
 		int[] somelist = generator.generateRandomNumbers(20, 100);
-		
+
 		// Generates a random value.
 		int value = generator.generateRandomValue(100);
-		int answer = -1;
 
 		// Prints random list.
 		System.out.print("Searched list: ");
@@ -23,15 +22,11 @@ public class LinearSearchTest {
 		// Prints searched value.
 		ValueLogger.logValue(value);
 
-		// Searches array. Finds last value from array.
-		for (int i = 0; i < somelist.length; i++) {
-			if (somelist[i] == value) {
-				answer = i;
-			}
-		}
+		// Creates new reference and links it with object type LinearSearch.
+		LinearSearch next = new LinearSearch();
 
-		if (answer >= 0) {
-			System.out.print("Searched value position number:  " + answer);
+		if (next.searchLinearly(somelist, value) >= 0) {
+			System.out.print("Searched value position number:  " + next.searchLinearly(somelist, value));
 		} else {
 			System.out.print("Searched value is not on the list.");
 		}
