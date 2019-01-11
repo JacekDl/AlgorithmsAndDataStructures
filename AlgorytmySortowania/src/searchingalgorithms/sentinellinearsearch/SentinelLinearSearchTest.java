@@ -1,50 +1,53 @@
 package sentinellinearsearch;
 
+import logging.ArrayLogger;
+import logging.ValueLogger;
+import testdata.TestDataGenerator;
+
 public class SentinelLinearSearchTest {
 
 	public static void main(String[] args) {
-		int Lista[] = new int[12];
-		Lista[0] = 15;
-		Lista[1] = 23;
-		Lista[2] = 24;
-		Lista[3] = 125;
-		Lista[4] = 18;
-		Lista[5] = 56;
-		Lista[6] = 2;
-		Lista[7] = 24;
-		Lista[8] = 35;
-		Lista[9] = 21;
-		Lista[10] = 25;
-		Lista[11] = 81;
+		// Generates list of random values.
+		TestDataGenerator generator = new TestDataGenerator();
+		int[] somelist = generator.generateRandomNumbers(20, 100);
+
+		// Generates a random value.
+		int value = generator.generateRandomValue(100);
+
+		// Prints random list.
+		System.out.print("Searched list: ");
+		ArrayLogger.log(somelist);
+
+		// Prints searched value.
+		ValueLogger.logValue(value);
+
 		
-		
-		System.out.println(Lista.length);				//Wyœwietla d³ugoœæ listy.
-		int wyszukiwanaWartosc = 21;					//Poszukiwana wartoœæ.
-		int ostatni = Lista[Lista.length-1];			//Podstawia ostatni element listy do zmiennej 'ostatni'.
-		Lista[Lista.length-1] = wyszukiwanaWartosc;		//Zastêpuje ostatni element listy wartoœci¹ poszukiwan¹.
-		
-		//Porównuje zawartoœæ listy z wartoœci¹ poszukiwan¹.
-		//Zwraca i gdy znajdzie wartoœæ poszukiwan¹ lub gdy dojdzie do ostatniego elementu listy.
+		// Podstawia ostatni element listy do zmiennej 'last'.
+		int last = somelist[somelist.length - 1]; 
+		somelist[somelist.length - 1] = value; // Zastêpuje ostatni element listy wartoœci¹ poszukiwan¹.
+
+		// Porównuje zawartoœæ listy z wartoœci¹ poszukiwan¹.
+		// Zwraca i gdy znajdzie wartoœæ poszukiwan¹ lub gdy dojdzie do ostatniego
+		// elementu listy.
 		int i = 0;
-		while (Lista[i] != wyszukiwanaWartosc) {
+		while (somelist[i] != value) {
 			i++;
 		}
-		
-		//Przywraca pierwotn¹ wartoœæ ostatniego elementu listy i tym samym pierwotny kszta³t listy.
-		Lista[Lista.length-1] = ostatni;
-		
-		//Jeœli poszukiwana wartoœæ zosta³a znaleziona przed dotarciem do ostatniego elementu listy,
-		//lub gdy ostatni element przywróconej listy jest poszukiwan¹ wartoœci¹,
-		//wyœwietla komunikat powodzenia wyszukiwania.
-		if (i<Lista.length-1 || Lista[Lista.length-1] == wyszukiwanaWartosc) {
+
+		// Przywraca pierwotn¹ wartoœæ ostatniego elementu listy i tym samym pierwotny
+		// kszta³t listy.
+		somelist[somelist.length - 1] = last;
+
+		// Jeœli poszukiwana wartoœæ zosta³a znaleziona przed dotarciem do ostatniego
+		// elementu listy,
+		// lub gdy ostatni element przywróconej listy jest poszukiwan¹ wartoœci¹,
+		// wyœwietla komunikat powodzenia wyszukiwania.
+		if (i < somelist.length - 1 || somelist[somelist.length - 1] == value) {
 			System.out.print("Wyszukiwana wartoœæ znajduje siê pod indeksem nr: " + i);
-		//W przeciwnym razie wyœwietla niepowodzenie wyszukiwania.
-		}else {
+			// W przeciwnym razie wyœwietla niepowodzenie wyszukiwania.
+		} else {
 			System.out.print("Wyszukiwana wartoœæ nie znajduje siê na liœcie.");
 		}
-		
-		
-		
 
 	}
 
