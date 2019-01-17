@@ -26,6 +26,7 @@ public class BetterLinearTest {
 		int answer = next.searchBetterLinearly(somelist, value);
 		
 		// Prints result of search.
+		//TODO - move to logging package 
 		if (answer >= 0) {
 			System.out.print("Searched value position number:  " + answer);
 		} else {

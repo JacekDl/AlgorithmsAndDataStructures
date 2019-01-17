@@ -24,10 +24,12 @@ public class LinearSearchTest {
 
 		// Creates new reference type LinearSearch and links it with object next.
 		LinearSearch next = new LinearSearch();
-
+		int answer = next.searchLinearly(somelist, value);
+		
 		// Prints result of search.
-		if (next.searchLinearly(somelist, value) >= 0) {
-			System.out.print("Searched value position number:  " + next.searchLinearly(somelist, value));
+		//TODO - move to logging package 
+		if (answer >= 0) {
+			System.out.print("Searched value position number:  " + answer);
 		} else {
 			System.out.print("Searched value is not on the list.");
 		}
