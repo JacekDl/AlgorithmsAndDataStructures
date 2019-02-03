@@ -10,12 +10,12 @@ public class BinarySearch {
 		while (p <= r) {
 			q = Math.floorDiv(p + r, 2);
 			/*
-			 * System.out.println("Wartoœæ p: " + p); System.out.println("Wartoœæ q: " + q);
-			 * System.out.println("Wartoœæ r: " + r); System.out.println("");
+			 * System.out.println("Wartoï¿½ï¿½ p: " + p); System.out.println("Wartoï¿½ï¿½ q: " + q);
+			 * System.out.println("Wartoï¿½ï¿½ r: " + r); System.out.println("");
 			 */
 			if (list[q] == value) {
 				System.out.print("Searched value position on the list: " + q);
-				break;
+				return;
 			} else if (list[q] > value) {
 				r = q - 1;
 			} else if (list[q] < value) {
@@ -24,7 +24,7 @@ public class BinarySearch {
 			// Prints information if search is unsuccessful.
 			if (list[q] != value && p > r) {
 				System.out.println("Searched value is not on the list.");
-				break;
+				return;
 			}
 		}
 	}

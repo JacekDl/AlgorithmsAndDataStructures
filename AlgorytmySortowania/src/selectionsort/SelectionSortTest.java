@@ -7,6 +7,14 @@ import testdata.TestDataGenerator;
 public class SelectionSortTest {
 	public static void main(String[] args) {
 
+		//1) input: null
+		//2) input: []
+		//3) input: [1]
+		//4) input: [1,-2]
+		//5) input: [1,-2,3,2,1,56,3,-2,0]
+		//6) input: [1,2,3,4,5,6,7,8]
+		//7) input: [8,7,6,5,4,3,2,1]
+
 		// TODO Jacek - please refactor as it is in InsertionSort --> Jacek: done
 
 		// Creates new reference/local variable 'sorting' and links it with object type

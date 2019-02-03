@@ -5,36 +5,64 @@ import java.util.List;
 
 public class LinkedList {
 
-	private Node first;
-	private Node last;
-	
-	public void add(int value) {
-		
-		if(last != null) {
-			Node node = new Node();
-			node.setValue(value);
-			
-			last.setNext(node);
-			last = node;
-		} else {
-			
-			Node node = new Node();
-			node.setValue(value);
-			
-			last = node;
-			first = node;
-		}	
-	}
-	
-	public void log() {
-		
-		Node temp = first;
-		while(temp != null) {
-			System.out.println(temp.getValue());
-			temp = temp.getNext();
-		}
-	
+    private Node first;
 
-	}
-	
+    public void add(int value) {
+
+    }
+
+    public void insert(int position, int value) {
+
+    }
+
+    private void insertRec() {
+
+    }
+
+    private void insertIter(int value, int positionDiff) {
+
+    }
+
+    //removes first elem with given value
+    public void remove(int value) {
+
+    }
+
+    private void removeIter(int value) {
+
+    }
+
+    private void removeRec() {
+
+    }
+
+    public void removeAll(int value) {
+
+    }
+
+    private void removeAllIter(int value) {
+
+    }
+
+    //naive, normally done with private variable
+    public int size() {
+
+    }
+
+    private int sizeRec(Node node, int accumulator) {
+
+    }
+
+    private int sizeIter() {
+
+    }
+
+    public void add(int[] values) {
+
+    }
+
+    public void print() {
+
+    }
+
 }
