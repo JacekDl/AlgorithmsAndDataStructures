@@ -17,15 +17,35 @@ public class LinkedList {
 
 	public void add(int value) {
 		Node current = first; // points to first reference/node of LinkedList
-		if ( current == null) { // checks if reference points to object class Node
-								// if reference points to null (no object) 
-			first = new Node(value); 	// creates new Node with value - it's going to be the first node (head) of LinkedList
+		if (current == null) { // checks if reference points to object class Node
+			// if reference points to null (no object)
+			first = new Node(value); // creates new Node with value - it's going to be the first node (head) of
+			// LinkedList
 			return;
 		}
 		while (current.next != null) { // checks if node has the following node
 			current = current.next;
 		}
 		current.next = new Node(value);
+	}
+
+	public void print() {
+		Node current = first;
+		if (current == null) {
+			return;
+		}
+		while (current.next != null) { // checks if node has the following node
+			System.out.println(current.value);
+			current = current.next;
+		}
+		System.out.println(current.getValue());
+
+		/*
+		 * Node current = first; do { System.out.println(current.value); current =
+		 * current.getNext(); } while (current.hasNext());
+		 * System.out.println(current.value);
+		 */
+
 	}
 
 	public void insert(int position, int value) {
@@ -81,16 +101,6 @@ public class LinkedList {
 	 */
 
 	public void add(int[] values) {
-
-	}
-
-	public void print() {
-		Node current = first;
-		do {
-			System.out.println(current.value);
-			current = current.getNext();
-		} while (current.hasNext());
-		System.out.println(current.value);
 
 	}
 
