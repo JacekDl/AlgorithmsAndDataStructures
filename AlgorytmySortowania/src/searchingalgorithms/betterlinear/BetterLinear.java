@@ -8,6 +8,6 @@ public class BetterLinear {
                 return list[i];
             }
         }
-        return -1
+        return -1;
     }
 }

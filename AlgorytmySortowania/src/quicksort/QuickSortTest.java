@@ -16,10 +16,12 @@ public class QuickSortTest {
 		System.out.print("List before sorting: ");
 		ArrayLogger.log(newlist);
 
-		// Insertion sort.
+		// Quicksort.
 		QuickSort sorting = new QuickSort();
 		sorting.sortByQuickSort(newlist, p, r);
 
+		
+		
 		// Prints sorted list.
 		System.out.print("Sorted list: ");
 		ArrayLogger.log(newlist);

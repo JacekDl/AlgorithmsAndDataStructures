@@ -1,6 +1,10 @@
 package arrays;
 
 import java.util.List;
+
+import bubblesort.BubbleSort;
+import insertionsort.InsertionSort;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import logging.ArrayLogger;
@@ -42,16 +46,19 @@ public class ArrayListTester {
 		}else {
 			System.out.println("Arrays are different.");
 		}
-		// ArrayList array = new ArrayList();
-		/*TestDataGenerator generator = new TestDataGenerator();
-		int[] testarray = generator.generateRandomNumbers(10, 50);
-
-		ArrayLogger.log(testarray);
-
-		System.out.println(testarray.length);
-*/
-		// ArrayList myarray = new ArrayList<>();
-
+		
+		System.out.println(Arrays.toString(array2));
+		Arrays.sort(array2);
+		System.out.println(Arrays.toString(array2));
+		System.out.println(Arrays.binarySearch(array2, -5));
+		
+		/*BubbleSort sort = new BubbleSort();
+		sort.sortBubbly(array3);*/
+		
+		/*InsertionSort sorting = new InsertionSort();
+		sorting.sortByInsertion(array3);*/
+		
+		System.out.println(Arrays.toString(array3));
 	}
 	
 	
