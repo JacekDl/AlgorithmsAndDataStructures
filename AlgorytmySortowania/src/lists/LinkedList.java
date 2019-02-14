@@ -52,7 +52,7 @@ public class LinkedList {
 		
 	}
 	
-	/*public void removeFirst() {
+	public void removeFirst() {
 		Node current = first;
 		if (current == null) { //checks if LinkedList contains any Nodes, if false returns
 			return;
@@ -60,7 +60,10 @@ public class LinkedList {
 		if (current.next == null) { //checks if LinkedList contains single Node
 			first = null;			//if true points reference first to null
 			return;
-	}*/
+		}else {
+			first = current.next;
+		}
+	}
 	
 	// removes first elem with given value
 	public void remove(int value) {
