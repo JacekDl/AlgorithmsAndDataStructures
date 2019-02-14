@@ -7,14 +7,7 @@ import java.util.List;
 public class LinkedList {
 
 	private Node first;
-
-	/*
-	 * public void add(int value) { Node current = head; Node next = new Node(); if
-	 * (current.hasNext() == false) { head.value = value; head.next = next; }
-	 * 
-	 * }
-	 */
-
+	
 	public void add(int value) {
 		Node current = first; // points to first reference/node of LinkedList
 		if (current == null) { // checks if reference points to object class Node
@@ -34,18 +27,48 @@ public class LinkedList {
 		if (current == null) {
 			return;
 		}
+
 		while (current.next != null) { // checks if node has the following node
 			System.out.println(current.value);
 			current = current.next;
 		}
-		System.out.println(current.getValue());
+		System.out.println(current.value);
+	}
 
-		/*
-		 * Node current = first; do { System.out.println(current.value); current =
-		 * current.getNext(); } while (current.hasNext());
-		 * System.out.println(current.value);
-		 */
-
+	public void removeLast() {
+		Node current = first;
+		if (current == null) { //checks if LinkedList contains any Nodes, if false returns
+			return;
+		}
+		if (current.next == null) { //checks if LinkedList contains single Node
+			first = null;			//if true points reference first to null
+			return;
+		}
+		while(current.next.next != null) {
+			current = current.next;
+		}
+		current.next = null;
+			
+		
+	}
+	
+	/*public void removeFirst() {
+		Node current = first;
+		if (current == null) { //checks if LinkedList contains any Nodes, if false returns
+			return;
+		}
+		if (current.next == null) { //checks if LinkedList contains single Node
+			first = null;			//if true points reference first to null
+			return;
+	}*/
+	
+	// removes first elem with given value
+	public void remove(int value) {
+		Node current = first;
+		if (current == null) {
+			return;
+		}
+		
 	}
 
 	public void insert(int position, int value) {
@@ -57,11 +80,6 @@ public class LinkedList {
 	}
 
 	private void insertIter(int value, int positionDiff) {
-
-	}
-
-	// removes first elem with given value
-	public void remove(int value) {
 
 	}
 
