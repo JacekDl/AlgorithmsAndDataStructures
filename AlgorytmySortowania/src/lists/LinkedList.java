@@ -67,20 +67,21 @@ public class LinkedList {
 		if (current == null) {
 			return;
 		}
-		if(current.next == null && current.value == value) { //istructions for single element in LinkedList with searched value
+		if(current.next == null && current.value == value) { //intructions for 1-element LinkedList with searched value
 			first = null;
+		}else if (current.next == null && current.value != value) { //instructions for 1-element LinkedList without searched value
 			return;
 		}
-		if(current.value == value) {
+		if(current.value == value) { 
 			first = current.next;
 			return;
 		}
-		while (current.next.value != value) {
-			current = current.next;
+		while (current.next.next != null && current.next.value != value) { //crawls through the list looking for value or end of list
+			current = current.next;	
 		}
+		if (current.next.value == value) { //checks if the next element is searched value and removes it if true
 		current.next = current.next.next;
-		
-		
+		}
 	}
 
 	public void insert(int position, int value) {
