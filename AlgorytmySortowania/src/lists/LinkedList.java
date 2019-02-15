@@ -1,22 +1,18 @@
 package lists;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.List;
-
 public class LinkedList {
 
 	private Node first;
 	
 	public void add(int value) {
-		Node current = first; // points to first reference/node of LinkedList
-		if (current == null) { // checks if reference points to object class Node
-			// if reference points to null (no object)
-			first = new Node(value); // creates new Node with value - it's going to be the first node (head) of
+		Node current = first; 			// points to first reference/node of LinkedList
+		if (current == null) { 			// checks if reference points to object class Node
+										// if reference points to null (no object)
+			first = new Node(value); 	// creates new Node with value - it's going to be the first node (head) of
 			// LinkedList
 			return;
 		}
-		while (current.next != null) { // checks if node has the following node
+		while (current.next != null) { 	// checks if node has the following node
 			current = current.next;
 		}
 		current.next = new Node(value);
@@ -28,7 +24,7 @@ public class LinkedList {
 			return;
 		}
 
-		while (current.next != null) { // checks if node has the following node
+		while (current.next != null) { 	// checks if node has the following node
 			System.out.println(current.value);
 			current = current.next;
 		}
@@ -37,11 +33,11 @@ public class LinkedList {
 
 	public void removeLast() {
 		Node current = first;
-		if (current == null) { //checks if LinkedList contains any Nodes, if false returns
+		if (current == null) { 			//checks if LinkedList contains any Nodes, if false returns
 			return;
 		}
-		if (current.next == null) { //checks if LinkedList contains single Node
-			first = null;			//if true points reference first to null
+		if (current.next == null) { 	//checks if LinkedList contains single Node
+			first = null;				//if true points reference first to null
 			return;
 		}
 		while(current.next.next != null) {
@@ -54,11 +50,11 @@ public class LinkedList {
 	
 	public void removeFirst() {
 		Node current = first;
-		if (current == null) { //checks if LinkedList contains any Nodes, if false returns
+		if (current == null) { 			//checks if LinkedList contains any Nodes, if false returns
 			return;
 		}
-		if (current.next == null) { //checks if LinkedList contains single Node
-			first = null;			//if true points reference first to null
+		if (current.next == null) { 	//checks if LinkedList contains single Node
+			first = null;				//if true points reference first to null
 			return;
 		}else {
 			first = current.next;
@@ -71,6 +67,19 @@ public class LinkedList {
 		if (current == null) {
 			return;
 		}
+		if(current.next == null && current.value == value) { //istructions for single element in LinkedList with searched value
+			first = null;
+			return;
+		}
+		if(current.value == value) {
+			first = current.next;
+			return;
+		}
+		while (current.next.value != value) {
+			current = current.next;
+		}
+		current.next = current.next.next;
+		
 		
 	}
 
