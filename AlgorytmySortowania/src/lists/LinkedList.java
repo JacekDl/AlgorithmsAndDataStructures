@@ -4,8 +4,7 @@ public class LinkedList {
 
 	private Node first;
 
-	//////////////////// ADDS VALUE TO THE END OF
-	//////////////////// LINKEDLIST//////////////////////////
+	///// ADDS VALUE TO THE END OF LINKEDLIST
 	public void add(int value) {
 		Node current = first; // points to first reference/node of LinkedList
 		if (current == null) { // checks if reference points to object class Node
@@ -20,7 +19,7 @@ public class LinkedList {
 		current.next = new Node(value);
 	}
 
-	////////////////// PRINTS LINKEDLIST/////////////////////////
+	///// PRINTS LINKEDLIST
 	public void print() {
 		Node current = first;
 		if (current == null) {
@@ -28,7 +27,7 @@ public class LinkedList {
 		}
 
 		while (current.next != null) { // checks if node has the following node
-			System.out.print(current.value +" ");
+			System.out.print(current.value + " ");
 			current = current.next;
 		}
 		System.out.println(current.value);
@@ -119,33 +118,34 @@ public class LinkedList {
 
 	public void removeAll(int value) {
 		Node current = first;
-		if (current == null) { //checks if LinkedList is empty
+		if (current == null) { // checks if LinkedList is empty
 			return;
 		}
-		
-		if (current.next == null && current.value == value) { //checks if LinkedList contains 1 element with searched value
+
+		if (current.next == null && current.value == value) { // checks if LinkedList contains 1 element with searched
+																// value
 			first = null;
-		} else if (current.next == null) { //checks if LinkedList contains 1 element different than searched value
+		} else if (current.next == null) { // checks if LinkedList contains 1 element different than searched value
 			return;
 		}
-		
-		while (current.value == value) { //removes searched values from beginning of LinkedList, and moved first(head) reference 
+
+		while (current.value == value) { // removes searched values from beginning of LinkedList, and moved first(head)
+											// reference
 			first = current.next;
 			current = current.next;
 		}
-		
-		while (current.next.next != null) { //checks if next node to current isn't end of LinkedList
-			if (current.next.value == value) { //check if next node to current contains searched value
-				current.next = current.next.next; // if true sets current.next reference to next node and checks while statement again
-			}else {
+
+		while (current.next.next != null) { // checks if next node to current isn't end of LinkedList
+			if (current.next.value == value) { // check if next node to current contains searched value
+				current.next = current.next.next; // if true sets current.next reference to next node and checks while
+													// statement again
+			} else {
 				current = current.next;
 			}
 		}
-		if (current.next.value == value) { //checks if last element is the searched value
-			current.next = null; //if true removes it
+		if (current.next.value == value) { // checks if last element is the searched value
+			current.next = null; // if true removes it
 		}
-		
-		
 
 	}
 
@@ -188,20 +188,20 @@ public class LinkedList {
 
 	public void add(int[] values) {
 		Node current = first;
-		if (current == null) {
+		if (current == null) { //empty LinkedList
 			first = new Node(values[0]);
 			for (int i = 1; i < values.length; i++) {
 				this.add(values[i]);
 			}
 			return;
 		}
-		if (current.next == null) {
+		if (current.next == null) { //1-element LinkedList
 			for (int i = 0; i < values.length; i++) {
 				this.add(values[i]);
 			}
 			return;
 		}
-		while (current.next != null) {
+		while (current.next != null) {//searches for end of LinkedList
 			current = current.next;
 		}
 		for (int i = 0; i < values.length; i++) {
