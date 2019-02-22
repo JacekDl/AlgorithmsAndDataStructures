@@ -89,6 +89,37 @@ public class LinkedList {
 	}
 
 	public void insert(int position, int value) {
+		Node current = first;
+		int counter = 0;
+
+		if (current == null && position == 0) { // adds value to empty LinkedList if position equals 0
+			first = new Node(value);
+		} else if (current == null) { // or returns if position different than 0
+			return;
+		}
+
+		if (position == 0) { // adds value to the front of LinkedList
+			first = new Node(value);
+			first.next = current;
+			return;
+		}
+
+		while (current.next != null) { // inserts value to the middle of LinkedList
+			if (position == counter + 1) {
+				Node nodeToInsert = new Node(value);
+				nodeToInsert.next = current.next;
+				current.next = nodeToInsert;
+			}
+			current = current.next;
+			counter++;
+		}
+		if (current.next == null && position == counter + 1) { // adds value to the end of LinkedList if position within
+																// range
+			Node nodeToInsert = new Node(value);
+			current.next = nodeToInsert;
+		} else if (position > counter + 1) {
+			return;
+		}
 
 	}
 
