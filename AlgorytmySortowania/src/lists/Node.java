@@ -1,6 +1,6 @@
 package lists;
 
-public class Node {
+public class Node<T> {
 
 	int value;
 	Node next;
@@ -32,7 +32,7 @@ public class Node {
 	public boolean hasNext() { 
 		//this.next != null ? true : false;
 		
-		if(this.next != null) { //zmieniæ drabinkê if - else
+		if(this.next != null) { //zmieniï¿½ drabinkï¿½ if - else
 			return true;
 		}else {
 			return false;

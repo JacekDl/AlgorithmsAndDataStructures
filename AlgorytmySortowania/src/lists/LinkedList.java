@@ -4,6 +4,9 @@ public class LinkedList {
 
 	private Node first;
 
+	// -------------- recurency - trees, graphs
+
+	// -------------- Good job!
 	///// ADDS VALUE TO THE END OF LINKEDLIST
 	public void add(int value) {
 		Node current = first; // points to first reference/node of LinkedList
@@ -18,7 +21,7 @@ public class LinkedList {
 		}
 		current.next = new Node(value);
 	}
-
+    // -------------- Good job!
 	///// PRINTS LINKEDLIST
 	public void print() {
 		Node current = first;
@@ -33,6 +36,7 @@ public class LinkedList {
 		System.out.println(current.value);
 	}
 
+    // -------------- Good job!
 	public void removeLast() {
 		Node current = first;
 		if (current == null) { // checks if LinkedList contains any Nodes, if false returns
@@ -49,6 +53,7 @@ public class LinkedList {
 
 	}
 
+    // -------------- Good job! TODO - mention about exceptions
 	public void removeFirst() {
 		Node current = first;
 		if (current == null) { // checks if LinkedList contains any Nodes, if false returns
@@ -62,9 +67,11 @@ public class LinkedList {
 		}
 	}
 
+    // -------------- Good job! TODO - Mention about cyclomatix complexity & code metrics & Ratajczak style
 	// removes first elem with given value
 	public void remove(int value) {
 		Node current = first;
+
 		if (current == null) {
 			return;
 		}
@@ -88,15 +95,42 @@ public class LinkedList {
 		}
 	}
 
-	public void insert(int position, int value) {
-		Node current = first;
-		int counter = 0;
+//    //removes first elem with given value
+//    public void remove(int value) {
+//
+//        if (first != null && first.getValue() == value) {
+//            first = first.getNext();
+//            return;
+//        }
+//
+////        removeIter(value);
+//        removeRec(null, first, value);
+//    }
+//
+//    private void removeIter(int value) {
+//        Node prev = null;
+//        Node curr = first;
+//
+//        while (curr != null && curr.getValue() != value) {
+//            prev = curr;
+//            curr = curr.getNext();
+//        }
+//
+//        if (curr != null) {
+//            prev.setNext(curr.getNext());
+//        }
+//    }
 
-		if (current == null && position == 0) { // adds value to empty LinkedList if position equals 0
+	public void insert(int position, int value) {
+
+
+		if (first == null && position == 0) { // adds value to empty LinkedList if position equals 0
 			first = new Node(value);
-		} else if (current == null) { // or returns if position different than 0
+		} else if (first == null) { // or returns if position different than 0
 			return;
 		}
+
+        Node current = first;
 
 		if (position == 0) { // adds value to the front of LinkedList
 			first = new Node(value);
@@ -104,6 +138,9 @@ public class LinkedList {
 			return;
 		}
 
+        int counter = 0;
+		// -------------- you should stop iterating through the list, when you reach expected position - what if you want
+        // to put the value on position ~5, and the list has 999999999 elements? -> counter goes to while(...) loop
 		while (current.next != null) { // inserts value to the middle of LinkedList
 			if (position == counter + 1) {
 				Node nodeToInsert = new Node(value);
@@ -122,6 +159,37 @@ public class LinkedList {
 		}
 
 	}
+//    public void insert(int position, int value) {
+//        if (first == null && position != 0 || position < 0) {
+//            throw new IllegalArgumentException("...");
+//        } else if (position == 0) {
+//            first = new Node(first, value);
+//            return;
+//        }
+//
+//        insertIter(first, first.getNext(), position - 1, value);
+//
+//    }
+//    private void insertIter(int value, int positionDiff) {
+//
+//
+//        Node prev = null;
+//        Node curr = first;
+//
+//        while (positionDiff > 0 && curr != null) {
+//            prev = curr;
+//            curr = curr.getNext();
+//            positionDiff--;
+//        }
+//
+//        if (positionDiff > 0) {
+//            throw new IllegalArgumentException("...");
+//        }
+//
+//        prev.setNext(new Node(prev.getNext(), value));
+//
+//    }
+
 
 	/*
 	 * private void insertRec() {
@@ -188,6 +256,9 @@ public class LinkedList {
 
 	// naive, normally done with private variable
 	public int size() {
+
+
+	    //-------------- can be simplier
 		int counter = 1;
 		Node current = first;
 		if (current == null) { // LinkedList empty
@@ -217,6 +288,7 @@ public class LinkedList {
 	 * }
 	 */
 
+	//-------------- can be simplier
 	public void add(int[] values) {
 		Node current = first;
 		if (current == null) { //empty LinkedList
