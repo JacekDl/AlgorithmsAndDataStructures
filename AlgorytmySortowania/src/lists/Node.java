@@ -3,11 +3,7 @@ package lists;
 public class Node<T> {
 
 	private int value;
-	Node next;
-
-	public Node() {
-
-	}
+	private Node next;
 
 	public Node(int value) {
 		this.value = value;
@@ -29,15 +25,15 @@ public class Node<T> {
 		this.next = next;
 	}
 
-	public boolean hasNext() { 
-		//this.next != null ? true : false;
-		
-		if(this.next != null) { //zmieni� drabink� if - else
+	public boolean hasNext() {
+		// this.next != null ? true : false;
+
+		if (this.next != null) {
 			return true;
-		}else {
+		} else {
 			return false;
 		}
-		
+
 	}
 
 }
