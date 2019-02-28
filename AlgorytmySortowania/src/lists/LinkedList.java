@@ -1,13 +1,13 @@
 package lists;
 
-public class LinkedList {
+public class LinkedList<T> {
 
-	private Node first;
+	private Node<?> first;
 
 	///// ADDS VALUE TO THE END OF LINKEDLIST
-	public void add(int value) {
+	public void add(T value) {
 		if (first == null) { // checks if ref points to object class Node
-			first = new Node(value); // creates new Node with value - it's going to be the first node (head)
+			first = new Node<T>(value); // creates new Node with value - it's going to be the first node (head)
 			return;
 		}
 		Node current = first; // points to first reference/node of LinkedList
@@ -65,7 +65,7 @@ public class LinkedList {
 	// -------------- Good job! TODO - Mention about cyclomatix complexity & code
 	// metrics & Ratajczak style
 	///// REMOVES FIRST ELEMENT WITH GIVEN VALUE
-	public void remove(int value) {
+	public void remove(T value) {
 		if (first == null) {//LinkedList is empty
 			return;
 		}
@@ -117,7 +117,7 @@ public class LinkedList {
 	
 	
 
-	public void insert(int position, int value) {
+	public void insert(int position, T value) {
 
 		if (first == null && position == 0) { // adds value to empty LinkedList if position equals 0
 			first = new Node(value);
@@ -211,7 +211,7 @@ public class LinkedList {
 	  }
 	 */
 
-	public void removeAll(int value) {
+	public void removeAll(T value) {
 		Node current = first;
 		if (current == null) { // checks if LinkedList is empty
 			return;
@@ -286,7 +286,7 @@ public class LinkedList {
 	 */
 
 	// -------------- can be simplier
-	public void add(int[] values) {
+	public void add(T[] values) {
 		
 		if (first == null) { // empty LinkedList
 			first = new Node(values[0]);
