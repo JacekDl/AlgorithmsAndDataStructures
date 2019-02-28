@@ -2,7 +2,7 @@ package lists;
 
 public class Node<T> {
 
-	int value;
+	private int value;
 	Node next;
 
 	public Node() {
