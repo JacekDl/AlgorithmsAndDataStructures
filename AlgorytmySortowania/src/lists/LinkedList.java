@@ -2,7 +2,7 @@ package lists;
 
 public class LinkedList<T> {
 
-	private Node<?> first;
+	private Node<T> first;
 
 	///// ADDS VALUE TO THE END OF LINKEDLIST
 	public void add(T value) {
@@ -10,16 +10,16 @@ public class LinkedList<T> {
 			first = new Node<T>(value); // creates new Node with value - it's going to be the first node (head)
 			return;
 		}
-		Node current = first; // points to first reference/node of LinkedList
+		Node<T> current = first; // points to first reference/node of LinkedList
 		while (current.getNext() != null) { // checks if node has the following node
 			current = current.getNext();
 		}
-		current.setNext(new Node(value)); // current.next = new Node(value);
+		current.setNext(new Node<T>(value)); // current.next = new Node(value);
 	}
 
 	///// PRINTS LINKEDLIST
 	public void print() {
-		Node current = first;
+		Node<T> current = first;
 		if (current == null) {
 			return;
 		}
@@ -39,7 +39,7 @@ public class LinkedList<T> {
 			first = null; // if true points reference first to null
 			return;
 		}
-		Node current = first;
+		Node<T> current = first;
 		while (current.getNext().getNext() != null) {
 			current = current.getNext();
 		}
@@ -53,7 +53,7 @@ public class LinkedList<T> {
 		if (first == null) { // checks if LinkedList contains any Nodes, if false returns
 			return;
 		}
-		Node current = first;
+		Node<T> current = first;
 		if (current.getNext() == null) { // checks if LinkedList contains single Node
 			first = null; // if true points reference first to null
 			return;
@@ -78,7 +78,7 @@ public class LinkedList<T> {
 			first = first.getNext();
 			return;
 		}
-		Node current = first;
+		Node<T> current = first;
 		while (current.getNext().getNext() != null && current.getNext().getValue() != value) { // crawls through the list looking for
 																				// value
 																				// or end of list
@@ -120,14 +120,14 @@ public class LinkedList<T> {
 	public void insert(int position, T value) {
 
 		if (first == null && position == 0) { // adds value to empty LinkedList if position equals 0
-			first = new Node(value);
+			first = new Node<T>(value);
 		} else if (first == null) { // or returns if position different than 0
 			return;
 		}
 
-		Node current = first;
+		Node<T> current = first;
 		if (position == 0) { // adds value to the front of LinkedList
-			first = new Node(value);
+			first = new Node<T>(value);
 			first.setNext(current); // first = current;
 			return;
 		}
@@ -139,7 +139,7 @@ public class LinkedList<T> {
 		// counter goes to while(...) loop
 		while (current.getNext() != null  ) { // inserts value to the middle of LinkedList
 			if (position == counter + 1) {
-				Node nodeToInsert = new Node(value);
+				Node<T> nodeToInsert = new Node<T>(value);
 				nodeToInsert.setNext(current.getNext());// =nodeToInsert.next = current.next;
 				current.setNext(nodeToInsert);// =current.next = nodeToInsert;
 			}
@@ -148,7 +148,7 @@ public class LinkedList<T> {
 		}
 		if (current.getNext() == null && position == counter + 1) { // adds value to the end of LinkedList if position within
 																// range
-			Node nodeToInsert = new Node(value);
+			Node<T> nodeToInsert = new Node<T>(value);
 			current.setNext(nodeToInsert); //=current.next = nodeToInsert;
 		} else if (position > counter + 1) {
 			return;
@@ -212,7 +212,7 @@ public class LinkedList<T> {
 	 */
 
 	public void removeAll(T value) {
-		Node current = first;
+		Node<T> current = first;
 		if (current == null) { // checks if LinkedList is empty
 			return;
 		}
@@ -257,7 +257,7 @@ public class LinkedList<T> {
 
 		// -------------- can be simplier
 		int counter = 1;
-		Node current = first;
+		Node<T> current = first;
 		if (current == null) { // LinkedList empty
 			counter = 0;
 			return counter;
@@ -289,7 +289,7 @@ public class LinkedList<T> {
 	public void add(T[] values) {
 		
 		if (first == null) { // empty LinkedList
-			first = new Node(values[0]);
+			first = new Node<T>(values[0]);
 			for (int i = 1; i < values.length; i++) {
 				this.add(values[i]);
 			}
@@ -301,7 +301,7 @@ public class LinkedList<T> {
 			}
 			return;
 		}
-		Node current = first;
+		Node<T> current = first;
 		while (current.getNext() != null) {// searches for end of LinkedList
 			current = current.getNext();
 		}
