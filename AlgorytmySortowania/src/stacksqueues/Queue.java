@@ -1,9 +1,12 @@
+package stacksqueues;
+
 public interface Queue<T>{
 
+    void push(T value);
+    
     T peek();
 
     T poll();
 
-    void push(T value);
-
+    void print();
 }
