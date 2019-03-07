@@ -287,8 +287,8 @@ public class LinkedList<T> {
 
 	// -------------- can be simplier
 	public void add(T[] values) {
-		
-		if (first == null) { // empty LinkedList
+		/////first implementation:
+		/*if (first == null) { // empty LinkedList
 			first = new Node<T>(values[0]);
 			for (int i = 1; i < values.length; i++) {
 				this.add(values[i]);
@@ -301,13 +301,23 @@ public class LinkedList<T> {
 			}
 			return;
 		}
+		for (int i = 0; i < values.length; i++) {
+			this.add(values[i]);
+		}*/
+		
+		/////second implementation:
 		Node<T> current = first;
+		if(first == null) {
+			first = new Node<T>(null);
+		}
 		while (current.getNext() != null) {// searches for end of LinkedList
 			current = current.getNext();
 		}
 		for (int i = 0; i < values.length; i++) {
 			this.add(values[i]);
 		}
+		//TODO: convert array to LinkedList and add it to current LinkedList
+		
 
 	}
 
