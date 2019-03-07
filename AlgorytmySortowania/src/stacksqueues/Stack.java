@@ -10,5 +10,4 @@ public interface Stack<T> {
 
 	public void print();
 
-
 }

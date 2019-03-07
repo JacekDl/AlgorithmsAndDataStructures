@@ -4,7 +4,7 @@ public class StacksQueuesTester {
 
 	public static void main(String[] args) {
 
-		Stack<Integer> myStack = new StackImplWithList<>();
+		/*Stack<Integer> myStack = new StackImplWithList<>();
 
 		// test 0: check the value at the top if stack is empty
 		System.out.println("Test 0: ");
@@ -86,7 +86,51 @@ public class StacksQueuesTester {
 		System.out.println(nameQueue.poll());
 		System.out.println(nameQueue.poll());
 		System.out.println(nameQueue.poll());
-		System.out.println(nameQueue.poll());
+		System.out.println(nameQueue.poll());*/
+		
+		// test 11: create StackImplWithArray object
+		System.out.println("Test 11: create StackImplWithArray object:");
+		Integer[] val = new Integer[10];
+		StackImplWithArray<Integer> myStack = new StackImplWithArray<>(val);
+		myStack.print();
+		System.out.println();
+		
+		// test 12: add values to the stack (max.10) 
+		System.out.println("Test 12: add values to the stack (max.10):");
+		myStack.push(101);
+		myStack.push(102);
+		myStack.push(103);
+		myStack.push(104);
+		myStack.push(105);
+		myStack.push(106);
+		myStack.push(107);
+		myStack.push(108);
+		myStack.push(109);
+		myStack.push(110);
+//		myStack.push(111);
+		myStack.print();
+		System.out.println();
+		
+		// test 13: check the last value on the stack
+		System.out.println("Test 13: check the last value on the stack:");
+		myStack.peek();
+		
+		//test 14: remove values from the stack
+		System.out.println("Test 14: remove values from the stack:");
+		myStack.pop();
+		myStack.pop();
+		myStack.pop();
+		myStack.print();
+		
+		//test : expand stack to more than 10 values
+		
+		
+		
+		
+//		Integer[] newArray = new Integer[10];
+//		for (Integer i : newArray) {
+//			System.out.println(i);
+//		}
 	}
 
 }
