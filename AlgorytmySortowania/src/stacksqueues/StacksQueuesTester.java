@@ -97,17 +97,10 @@ public class StacksQueuesTester {
 		
 		// test 12: add values to the stack (max.10) 
 		System.out.println("Test 12: add values to the stack (max.10):");
-		myStack.push(101);
-		myStack.push(102);
-		myStack.push(103);
-		myStack.push(104);
-		myStack.push(105);
-		myStack.push(106);
-		myStack.push(107);
-		myStack.push(108);
-		myStack.push(109);
-		myStack.push(110);
-//		myStack.push(111);
+		for (int i = 0; i<10; i++) {
+			myStack.push(101+i);
+		}
+		//		myStack.push(111);
 		myStack.print();
 		System.out.println();
 		
@@ -121,9 +114,36 @@ public class StacksQueuesTester {
 		myStack.pop();
 		myStack.pop();
 		myStack.print();
+		System.out.println();
 		
 		//test : expand stack to more than 10 values
+		//TODO 
 		
+		//test 15: create and print object QueueImplWithArray:
+		System.out.println("Test 15: create and print object QueueImplWithArray: ");
+		Integer[] val2 = new Integer[10];
+		QueueImplWithArray<Integer> intQueueWithArray = new QueueImplWithArray<>(val2);
+		intQueueWithArray.print();
+		
+		//test 16: add values to the queue(max.10):
+		System.out.println("Test 16: add values to the queue(max.10):");
+		for (int i = 0; i<10; i++) {
+			intQueueWithArray.push(201+i);
+		}
+		//intQueueWithArray.push(211); //ArrayIndexOutOfBoundsException TODO: increase the size of array
+		intQueueWithArray.print();
+		
+		//test 17: check the value of the first element:
+		System.out.println("Test 17: check the value of the first element:");
+		System.out.println(intQueueWithArray.peek());
+		
+		//test 18: remove first value:
+		System.out.println("Test 18: remove first value:");
+		for(int i = 0 ; i<1; i++) {
+			intQueueWithArray.poll();
+		}
+		//intQueueWithArray.poll();
+		intQueueWithArray.print();
 		
 		
 		
