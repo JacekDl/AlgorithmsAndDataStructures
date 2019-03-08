@@ -39,6 +39,7 @@ public class LinkedListTester {
 		nextList.insert(0, 11);
 		nextList.insert(0, 11);
 		nextList.insert(4, 11);
+		nextList.insert(2, 1000);
 		nextList.print();
 
 		// test 7: add list to LinkedList:

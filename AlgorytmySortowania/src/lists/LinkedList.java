@@ -136,8 +136,9 @@ public class LinkedList<T> {
 		// -------------- you should stop iterating through the list, when you reach
 		// expected position - what if you want
 		// to put the value on position ~5, and the list has 999999999 elements? ->
-		// counter goes to while(...) loop
-		while (current.getNext() != null  ) { // inserts value to the middle of LinkedList
+		// counter goes to while(...) loop //DONE!!!
+		while (current.getNext() != null && position > counter) { // inserts value to the middle of LinkedList
+			//System.out.println("Loop no:" + counter); // --> tests how many loops does the statement
 			if (position == counter + 1) {
 				Node<T> nodeToInsert = new Node<T>(value);
 				nodeToInsert.setNext(current.getNext());// =nodeToInsert.next = current.next;
