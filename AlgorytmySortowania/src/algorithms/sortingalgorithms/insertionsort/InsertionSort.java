@@ -1,20 +1,17 @@
-package insertionsort;
+package algorithms.sortingalgorithms.insertionsort;
 
-import java.util.List;
-
-//TODO please rename polish -> english; Jacek: done.
 public class InsertionSort {
 
-	public void sortByInsertion(int[] list) {
+	public void sortByInsertion(int[] array) {
 
-		for (int i = 1; i < list.length; i++) {
-			int key = list[i];
-			int j = i - 1;
-			while (j > -1 && list[j] > key) {
-				list[j + 1] = list[j];
+		for (int i = 1; i < array.length; i++) {
+			int key = array[i];						//assigns key to value from array
+			int j = i - 1;							//first value to be compared with the key - i-1 (next to the left)
+			while (j > -1 && array[j] > key) {		
+				array[j + 1] = array[j];
 				j--;
 			}
-			list[j + 1] = key;
+			array[j + 1] = key;
 		}
 	}
 
@@ -26,5 +23,5 @@ public class InsertionSort {
 	/*private static boolean isEmpty(List<Integer> list) {
 		return list == null || list.size() == 0;
 	}
-*/
+	 */
 }
