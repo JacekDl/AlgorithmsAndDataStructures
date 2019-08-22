@@ -1,4 +1,4 @@
-package lists;
+package datastructures.lists;
 
 public class LinkedList<T> {
 

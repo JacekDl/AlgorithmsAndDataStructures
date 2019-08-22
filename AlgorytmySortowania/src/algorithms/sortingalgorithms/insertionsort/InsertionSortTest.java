@@ -8,7 +8,7 @@ public class InsertionSortTest {
 	public static void main(String[] args) {
 
 		TestDataGenerator generator = new TestDataGenerator();
-		int[] myArray = generator.generateRandomNumbers(5, 20);
+		int[] myArray = generator.generateRandomNumbers(10, 20);
 
 		// Prints list before sorting.
 		System.out.print("List before sorting: ");

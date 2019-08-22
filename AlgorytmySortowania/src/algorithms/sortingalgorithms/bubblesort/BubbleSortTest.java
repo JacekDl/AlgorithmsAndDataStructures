@@ -1,4 +1,4 @@
-package bubblesort;
+package algorithms.sortingalgorithms.bubblesort;
 
 import logging.ArrayLogger;
 import testdata.TestDataGenerator;
