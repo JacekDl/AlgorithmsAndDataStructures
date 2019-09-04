@@ -1,4 +1,4 @@
-package betterlinear;
+package algorithms.searchingalgorithms.betterlinear;
 
 import logging.ArrayLogger;
 import logging.ValueLogger;

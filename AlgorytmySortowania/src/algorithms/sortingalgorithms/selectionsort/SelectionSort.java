@@ -1,4 +1,4 @@
-package selectionsort;
+package algorithms.sortingalgorithms.selectionsort;
 
 //TODO please rename polish -> english. Jacek: done
 public class SelectionSort {

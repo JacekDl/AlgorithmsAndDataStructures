@@ -1,6 +1,6 @@
-package stacksqueues;
+package datastructures.stacksqueues;
 
-import lists.Node;
+import datastructures.linkedlists.*; //lists.Node;
 
 public class StackImplWithList<T> implements Stack<T> {
 

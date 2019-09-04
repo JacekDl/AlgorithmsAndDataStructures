@@ -1,6 +1,6 @@
-package selectionsort;
+package algorithms.sortingalgorithms.selectionsort;
 
-import binarysearch.BinarySearch;
+import algorithms.searchingalgorithms.binarysearch.*;
 import logging.ArrayLogger;
 import testdata.TestDataGenerator;
 

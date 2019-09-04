@@ -1,4 +1,4 @@
-package sentinellinearsearch;
+package algorithms.searchingalgorithms.sentinellinearsearch;
 
 import logging.ArrayLogger;
 import logging.ValueLogger;

@@ -1,4 +1,4 @@
-package trees.binarysearchtree;
+package datastructures.trees.binarysearchtree;
 
 public class BSTreeTester {
 

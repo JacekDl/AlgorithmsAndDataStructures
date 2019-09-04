@@ -1,4 +1,4 @@
-package sentinellinearsearch;
+package algorithms.searchingalgorithms.sentinellinearsearch;
 
 public class SentinelLinearSearch {
 

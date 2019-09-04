@@ -1,4 +1,4 @@
-package linear;
+package algorithms.searchingalgorithms.linear;
 
 import logging.ArrayLogger;
 import logging.ValueLogger;

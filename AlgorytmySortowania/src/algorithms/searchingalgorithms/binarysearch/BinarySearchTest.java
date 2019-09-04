@@ -1,8 +1,8 @@
-package binarysearch;
+package algorithms.searchingalgorithms.binarysearch;
 
 import logging.ArrayLogger;
 import logging.ValueLogger;
-import selectionsort.SelectionSort;
+import algorithms.sortingalgorithms.selectionsort.*;
 import testdata.TestDataGenerator;
 
 public class BinarySearchTest {

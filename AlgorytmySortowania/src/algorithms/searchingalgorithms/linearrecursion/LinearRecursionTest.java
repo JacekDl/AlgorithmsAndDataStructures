@@ -1,4 +1,4 @@
-package linearrecursion;
+package algorithms.searchingalgorithms.linearrecursion;
 
 import logging.ArrayLogger;
 import logging.ValueLogger;

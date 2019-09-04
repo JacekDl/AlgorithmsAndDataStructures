@@ -1,9 +1,9 @@
-package arrays;
+package datastructures.arrays;
 
 import java.util.List;
 
-import bubblesort.BubbleSort;
-import insertionsort.InsertionSort;
+import algorithms.sortingalgorithms.bubblesort.*;
+import algorithms.sortingalgorithms.insertionsort.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package betterlinear;
+package algorithms.searchingalgorithms.betterlinear;
 
 public class BetterLinear {
 

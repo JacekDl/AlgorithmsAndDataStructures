@@ -1,4 +1,4 @@
-package stacksqueues;
+package datastructures.stacksqueues;
 
 public class QueueImplWithArray<T>implements Queue<T> {
 
