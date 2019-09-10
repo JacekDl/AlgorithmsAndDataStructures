@@ -2,9 +2,17 @@ package datastructures.trees.binarysearchtree;
 
 public class BSTree {
 
-	public BSTreeNode root;
+	private BSTreeNode root;
 	
 	
+	public BSTreeNode getRoot() {
+		return root;
+	}
+
+	public void setRoot(BSTreeNode root) {
+		this.root = root;
+	}
+
 	public void add(int value) {
 		addFirstElement(value);
 		BSTreeNode current = root;
@@ -40,32 +48,74 @@ public class BSTree {
 	
 	private void addFirstElement(int value) {
 		if (root == null) {
-			root = new BSTreeNode(value);
+			root = new BSTreeNode(value, null);
 		}
 	}
 	
-	private void addNextElement(BSTreeNode current, int value) {
+	private void addNextElement(BSTreeNode current, int value){
 		if (current.getValue() > value) {
 			if(current.getLeft() == null) {
-				current.setLeft(new BSTreeNode(value));
+				current.setLeft(new BSTreeNode(value, current)); //assigns current to new Node and new Node to current 
 			}else {
 				addNextElement(current.getLeft(), value);
 			}
 		}
-		if (current.getValue() < value) {
+		else if (current.getValue() < value) {
 			if(current.getRight() == null) {
-				current.setRight(new BSTreeNode(value));
+				current.setRight(new BSTreeNode(value, current));//assigns current to new Node and new Node to current 
 			}else {
 				addNextElement(current.getRight(), value);
 			}
 		}
-		else if (current.getValue() == value){
-			//System.out.println("This value already exists in BSTree.");
+		else{ //TODO: currently it prints this message twice(1st when it finds matching value, 2nd when it finishes the loop)
+			System.out.println("This value already exists in BSTree.");
 			return;
 		}
 	}
+
+	//inorder tree walk recursively
+	public void printValuesInorder(BSTreeNode current) { 			//begin with current(param) = root(arg)
+		if(current != null) {										//if current isn't refering to null
+			printValuesInorder(current.getLeft());					//first print whatever is on left side
+			System.out.print(current.getValue() + " ");				//then print current.value
+			printValuesInorder(current.getRight());					//then print whatever is on right side
+		}
+	}
+	
+	//inorder tree walk nonrecursive --> TODO 
+	//public void printValuesNoRecursively()
 	
 	
+	//preodred tree walk recursively
+	public void printValuesPreorder(BSTreeNode current) {
+		if(current != null) {
+			System.out.print(current.getValue() + " ");
+			printValuesPreorder(current.getLeft());
+			printValuesPreorder(current.getRight());
+		}
+	}
+	
+	//postorder tree walk recursively
+	public void printValuesPostorder(BSTreeNode current) {
+		if(current != null) {
+			printValuesPostorder(current.getLeft());
+			printValuesPostorder(current.getRight());
+			System.out.print(current.getValue() + " ");
+		}
+	}
+
+	public BSTreeNode findValue(BSTreeNode current, int i) {
+		if(current == null || i == current.getValue()) {
+			return current;
+		}
+		if(i < current.getValue()) {
+			return findValue(current.getLeft(), i);
+		}else{
+			return findValue(current.getRight(), i);
+		}
+	}
+	
+}	
 	
 	
-}
+

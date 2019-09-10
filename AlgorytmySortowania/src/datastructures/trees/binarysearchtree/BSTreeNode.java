@@ -7,9 +7,15 @@ public class BSTreeNode {
 	private BSTreeNode right;
 	private BSTreeNode parent;
 	
-	//constructor:
-	public BSTreeNode(int value) {
+	//constructor - in use before introduction of parent BSTreeNode 
+	/*public BSTreeNode(int value) {
 		this.value = value;
+	}*/
+
+	//constructor of any node
+	public BSTreeNode(int value, BSTreeNode parent) {
+		this.value = value;
+		this.parent = parent;
 	}
 
 	//int
