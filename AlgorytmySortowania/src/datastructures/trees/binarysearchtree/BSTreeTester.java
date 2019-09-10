@@ -66,14 +66,17 @@ public class BSTreeTester {
 		//Test 13: 
 		BSTree secondTree = new BSTree();
 		TestDataGenerator generator = new TestDataGenerator();
-		int[] somelist = generator.generateRandomNumbers(20, 100);
+		int[] somelist = generator.generateRandomNumbers(50, 100);
 		secondTree.addValues(somelist);
 		secondTree.printValuesInorder(secondTree.getRoot());
 		System.out.println();
 		System.out.println(secondTree.getRoot().getValue());
 		System.out.print(secondTree.getRoot().getLeft().getValue() + " ");
 		System.out.println(secondTree.getRoot().getRight().getValue());
-		secondTree.printValuesPostorder(secondTree.getRoot());
+		System.out.println();
+		BSTreeNode mySecondValue = secondTree.findValue(secondTree.getRoot(), 11);
+		if(mySecondValue != null) System.out.println("We have found your value!!!");
+		else System.out.println("Your value is not in our tree.");
 		
 		
 	}
