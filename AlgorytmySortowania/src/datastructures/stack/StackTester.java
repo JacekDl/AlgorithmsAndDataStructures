@@ -4,7 +4,7 @@ public class StackTester {
 
 	public static void main(String[] args) {
 
-		StackUsingArray<Integer> sua = new StackUsingArray<>();
+		StackUsingArrayList<Integer> sua = new StackUsingArrayList<>();
 		sua.push(12);
 		sua.push(14);
 		sua.push(16);

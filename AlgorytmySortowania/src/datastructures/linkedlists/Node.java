@@ -26,7 +26,7 @@ public class Node<T> {
 	}
 
 	public boolean hasNext() {
-		// this.next != null ? true : false;
+		//this.next != null ? true : false;
 
 		if (this.next != null) {
 			return true;

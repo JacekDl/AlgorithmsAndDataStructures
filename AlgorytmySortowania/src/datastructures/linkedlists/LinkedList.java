@@ -4,7 +4,27 @@ public class LinkedList<T> {
 
 	private Node<T> first;
 
+	/**
+	 * @param first
+	 */
+	public LinkedList() {
+		this.first = new Node<T>(null);
+		}
+
 	///// ADDS VALUE TO THE END OF LINKEDLIST
+	/*public void add(T value) {
+		if (first.getValue() == null){ // checks if ref points to object class Node
+			first.setValue(value);// creates new Node with value - it's going to be the first node (head)
+			return;
+		}
+		Node<T> current = first; // points to first reference/node of LinkedList
+		while (current.getNext() != null) { // checks if node has the following node
+			current = current.getNext();
+		}
+		current.setNext(new Node<T>(value)); // current.next = new Node(value);
+	}*/
+	
+	///// ADDS VALUE TO THE END OF LINKEDLIST --> this is my first version of add method
 	public void add(T value) {
 		if (first == null) { // checks if ref points to object class Node
 			first = new Node<T>(value); // creates new Node with value - it's going to be the first node (head)

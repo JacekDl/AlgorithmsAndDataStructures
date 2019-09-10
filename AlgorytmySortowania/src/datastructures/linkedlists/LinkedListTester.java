@@ -17,6 +17,11 @@ public class LinkedListTester {
 		// test 2: remove last value:
 		System.out.println("Test 2: remove last value: ");
 		nextList.removeLast();
+		nextList.removeLast();
+		nextList.removeLast();
+		nextList.removeLast();
+		nextList.removeLast();
+		nextList.removeLast();
 		nextList.print();
 
 		// test 3: remove first value:

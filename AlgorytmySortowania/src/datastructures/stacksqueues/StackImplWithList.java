@@ -1,10 +1,40 @@
 package datastructures.stacksqueues;
 
-import datastructures.linkedlists.*; //lists.Node;
+import datastructures.linkedlists.*; 
 
 public class StackImplWithList<T> implements Stack<T> {
 
-	private Node<T> first;
+	private LinkedList<T> myLinkedList;
+	
+	public StackImplWithList() {
+		myLinkedList = new LinkedList<>();
+	}
+	
+	@Override
+	public void push(T value) {
+		myLinkedList.add(value);
+		
+	}
+	
+	@Override
+	public T pop() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void peek() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void print() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	/*private Node<T> first;
 
 	///// Adds value to the top
 	public void push(T value) {
@@ -49,5 +79,5 @@ public class StackImplWithList<T> implements Stack<T> {
 		}
 		System.out.println(current.getValue());
 	}
-
+	*/
 }

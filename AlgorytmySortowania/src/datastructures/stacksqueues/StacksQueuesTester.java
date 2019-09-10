@@ -88,6 +88,7 @@ public class StacksQueuesTester {
 		System.out.println(nameQueue.poll());
 		System.out.println(nameQueue.poll());*/
 		
+		/*
 		// test 11: create StackImplWithArray object
 		System.out.println("Test 11: create StackImplWithArray object:");
 		Integer[] val = new Integer[10];
@@ -151,6 +152,13 @@ public class StacksQueuesTester {
 //		for (Integer i : newArray) {
 //			System.out.println(i);
 //		}
+ */
 	}
+	
+		
+		//test 19: create new stack and add some values
+		Stack<Integer> myStack = new StackImplWithList<Integer>();
+		//myStack.push(11);
+		
 
 }
