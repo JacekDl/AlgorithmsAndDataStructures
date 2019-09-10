@@ -1,5 +1,7 @@
 package datastructures.trees.binarysearchtree;
 
+import testdata.TestDataGenerator;
+
 public class BSTreeTester {
 
 	public static void main(String[] args) {
@@ -56,11 +58,23 @@ public class BSTreeTester {
 		
 		//Test 12: find value //TODO: it only finds values doesn't report missing values >> done!!! findValue returns ref to searched value or ref to null if searched value is not in the tree 
 		System.out.println();
-		BSTreeNode myValue = firstTree.findValue(firstTree.getRoot(), 2);
+		BSTreeNode myValue = firstTree.findValue(firstTree.getRoot(), 11);
 		if(myValue != null) System.out.println("We have found your value!!!");
 		else System.out.println("Your value is not in our tree.");
 		
 		//TODO: using testdata class create method to add random numbers to a tree (using array)
+		//Test 13: 
+		BSTree secondTree = new BSTree();
+		TestDataGenerator generator = new TestDataGenerator();
+		int[] somelist = generator.generateRandomNumbers(20, 100);
+		secondTree.addValues(somelist);
+		secondTree.printValuesInorder(secondTree.getRoot());
+		System.out.println();
+		System.out.println(secondTree.getRoot().getValue());
+		System.out.print(secondTree.getRoot().getLeft().getValue() + " ");
+		System.out.println(secondTree.getRoot().getRight().getValue());
+		secondTree.printValuesPostorder(secondTree.getRoot());
+		
 		
 	}
 

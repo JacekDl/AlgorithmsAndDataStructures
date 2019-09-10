@@ -53,7 +53,7 @@ public class BSTree {
 	}
 	
 	private void addNextElement(BSTreeNode current, int value){
-		if (current.getValue() > value) {
+		if (current.getValue() > value) { //current.getValue() >= value for unique values(no duplicates)
 			if(current.getLeft() == null) {
 				current.setLeft(new BSTreeNode(value, current)); //assigns current to new Node and new Node to current 
 			}else {
@@ -67,9 +67,15 @@ public class BSTree {
 				addNextElement(current.getRight(), value);
 			}
 		}
-		else{ //TODO: currently it prints this message twice(1st when it finds matching value, 2nd when it finishes the loop)
-			System.out.println("This value already exists in BSTree.");
+		else if (current.getValue() == value){ //TODO: currently it prints this message twice(1st when it finds matching value, 2nd when it finishes the loop)
+			//System.out.println("This value already exists in BSTree.");
 			return;
+		}
+	}
+	
+	public void addValues(int[] values) {
+		for(int i : values) {
+			add(i);
 		}
 	}
 
@@ -114,6 +120,8 @@ public class BSTree {
 			return findValue(current.getRight(), i);
 		}
 	}
+
+	
 	
 }	
 	
