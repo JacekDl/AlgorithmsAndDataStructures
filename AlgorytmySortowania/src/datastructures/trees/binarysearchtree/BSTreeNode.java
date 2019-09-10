@@ -21,6 +21,7 @@ public class BSTreeNode {
 		this.value = value;
 	}
 	
+	//left
 	public BSTreeNode getLeft() {
 		return left;
 	}
@@ -29,6 +30,7 @@ public class BSTreeNode {
 		this.left = left;
 	}
 	
+	//right
 	public BSTreeNode getRight() {
 		return right;
 	}
@@ -37,6 +39,7 @@ public class BSTreeNode {
 		this.right = right;
 	}
 	
+	//parent
 	public BSTreeNode getParent() {
 		return parent;
 	}
