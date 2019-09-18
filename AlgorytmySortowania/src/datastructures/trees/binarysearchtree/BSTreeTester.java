@@ -48,37 +48,89 @@ public class BSTreeTester {
 		firstTree.printValuesInorder(firstTree.getRoot());
 		System.out.println();
 		
+		//Test 9.1: remove value
+		int myValue = 9;				//TODO: there is something wrong with values 3 (changes order of BST) and 5(StackOverflowError) 
+		firstTree.deleteNode(myValue);
+		firstTree.printValuesInorder(firstTree.getRoot());
+		System.out.println();
+		firstTree.add(myValue);
+		firstTree.printValuesInorder(firstTree.getRoot());
+		System.out.println();
+		firstTree.delete(myValue);
+		//System.out.println();
+		firstTree.printValuesInorder(firstTree.getRoot());
+		System.out.println();
+		
 		
 		//Test 10: print values stored in BSTree (preorder)
-		firstTree.printValuesPreorder(firstTree.getRoot());
-		System.out.println();
+		/*firstTree.printValuesPreorder(firstTree.getRoot());
+		System.out.println();*/
 		
 		//Test 11: print values stored in BSTree (postorder)
-		firstTree.printValuesPostorder(firstTree.getRoot());
+		/*firstTree.printValuesPostorder(firstTree.getRoot());
+		System.out.println();*/
 		
-		//Test 12: find value //TODO: it only finds values doesn't report missing values >> done!!! findValue returns ref to searched value or ref to null if searched value is not in the tree 
-		System.out.println();
-		BSTreeNode myValue = firstTree.findValue(firstTree.getRoot(), 11);
-		if(myValue != null) System.out.println("We have found your value!!!");
-		else System.out.println("Your value is not in our tree.");
 		
-		//TODO: using testdata class create method to add random numbers to a tree (using array)
-		//Test 13: 
+		//TODO: using testdata class create method to add random numbers to a tree (using array) --> DONE
+		//Test 12: Create BSTree and fill it in with random numbers
 		BSTree secondTree = new BSTree();
 		TestDataGenerator generator = new TestDataGenerator();
-		int[] somelist = generator.generateRandomNumbers(50, 100);
-		secondTree.addValues(somelist);
+		secondTree.addValues(generator.generateRandomNumbers(50, 100));
+		
 		secondTree.printValuesInorder(secondTree.getRoot());
 		System.out.println();
-		System.out.println(secondTree.getRoot().getValue());
-		System.out.print(secondTree.getRoot().getLeft().getValue() + " ");
-		System.out.println(secondTree.getRoot().getRight().getValue());
+		
+		//Very primitive way of printing BSTree - throws NullPointerException if Node == null
+		System.out.println("Root of the this Binary Search Tree = " + secondTree.getRoot().getValue());
+		
+		/*System.out.print("  " + secondTree.getRoot().getLeft().getValue() + "  ");
+		System.out.print("   " + secondTree.getRoot().getRight().getValue());
 		System.out.println();
-		BSTreeNode mySecondValue = secondTree.findValue(secondTree.getRoot(), 11);
-		if(mySecondValue != null) System.out.println("We have found your value!!!");
-		else System.out.println("Your value is not in our tree.");
+		
+		System.out.print(secondTree.getRoot().getLeft().getLeft().getValue() + "  ");
+		System.out.print(secondTree.getRoot().getLeft().getRight().getValue() + "  ");
+		System.out.print(secondTree.getRoot().getRight().getLeft().getValue() + "  ");
+		System.out.print(secondTree.getRoot().getRight().getRight().getValue() + "  ");
+		System.out.println();*/
+		
+		//Test 13: find value //TODO: it only finds values doesn't report missing values >> done!!! findValue returns ref to searched value or ref to null if searched value is not in the tree 
+		
+		//				BSTreeNode myValue = firstTree.findValue(firstTree.getRoot(), 11);
+		//				if(myValue != null) System.out.println("We have found your value!!!");
+		//				else System.out.println("Your value is not in our tree.");
+		int searchedValue = 10;
+		System.out.println("Searched value = " + searchedValue);
+		secondTree.findValue(searchedValue);
+		
+		//Test 14: find minimum value
+		System.out.println("Minimum = " + secondTree.findMinimum().getValue());
+		
+		//Test 15: find maximum value
+		System.out.println("Maximum = " + secondTree.findMaximum().getValue());
+		
+		//Test 16: find successor
+		int value = 50;
+		System.out.println("Find successor of value = " + value);
+		BSTreeNode next = secondTree.findSuccessor(value);
+		System.out.print("The successor of your value = ");
+		if(next != null) System.out.println(next.getValue());
+		else System.out.println("null");
 		
 		
+		//Test 17: find predecessor
+		int value2 = 50;
+		System.out.println("Find predecessor of value = " + value2);
+		BSTreeNode next2 = secondTree.findPredecessor(value2);
+		System.out.print("The predecessor of your value = ");
+		if(next2 != null) System.out.println(next2.getValue());
+		else System.out.println("null");
+		
+		//Test 18: sum of elements
+		System.out.println("Sum of elements = " + secondTree.sum());
+		
+		//Test 19: number of elements
+		System.out.println("Number of elements = " + secondTree.getNumberOfElements());
 	}
+		
 
 }

@@ -53,4 +53,25 @@ public class BSTreeNode {
 	public void setParent(BSTreeNode parent) {
 		this.parent = parent;
 	}
+	
+	public boolean hasRight() {		//not used
+		if(right != null) return true;
+		else return false;
+	}
+	
+	public boolean hasLeft() {		//not used
+		if(left != null) return true;
+		else return false;
+	}
+	
+	public boolean hasNoChildren() {
+		if(left == null && right == null) return true;
+		else return false;
+	}
+	
+	public boolean hasOneChild() {
+		if(left != null && right == null) return true;
+		if(left == null && right != null) return true;
+		else return false;
+	}
 }
