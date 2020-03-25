@@ -1,6 +1,6 @@
 package algorithms.sortingalgorithms.insertionsort;
 
-public class InsertionSort {
+public class InsertionSort<T> {
 
 	public void sortByInsertion(int[] array) {
 
@@ -14,7 +14,7 @@ public class InsertionSort {
 			array[j + 1] = key;
 		}
 	}
-
+	
 	// example - short, meaningful methods
 	/*
 	 * private void doSmth(List<Integer> list) { if (isEmpty(list)) { // do smth } }

@@ -1,4 +1,4 @@
-package algorithms.searchingalgorithms.binarysearch;
+package algorithms.searchingalgorithms;
 
 //TODO please rename polish -> english Jacek:done
 public class BinarySearch {

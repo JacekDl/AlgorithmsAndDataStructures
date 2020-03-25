@@ -4,7 +4,6 @@ public class BSTree {
 
 	private BSTreeNode root;
 	
-	
 	public BSTreeNode getRoot() {
 		return root;
 	}
@@ -56,79 +55,93 @@ public class BSTree {
 	/////	DELETE VALUE	//////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	public void deleteNode(int i) {				//algorithm from Cormen
-		BSTreeNode current = findValue(i);
-		if(current.getLeft() == null) transplantNode(current, current.getRight());
-		else if(current.getRight() == null) transplantNode(current, current.getLeft());
-		else {
-			BSTreeNode successor = findMinimum(current);
-			if(successor.getParent() != current) {
+		BSTreeNode nodeToDelete = findValue(i);
+		if(nodeToDelete.getLeft() == null) transplantNode(nodeToDelete, nodeToDelete.getRight()); 		//deals with nodes with no children and nodes with right child but without left child
+		else if(nodeToDelete.getRight() == null) transplantNode(nodeToDelete, nodeToDelete.getLeft());	//deals with nodes with left child but without right child
+		else {																							//deals with nodes with two children 
+			BSTreeNode successor = findMinimum(nodeToDelete.getRight());
+			if(successor.getParent() != nodeToDelete) {
 				transplantNode(successor, successor.getRight());
-				successor.setRight(current.getRight());
+				successor.setRight(nodeToDelete.getRight());
 				successor.getRight().setParent(successor);
 			}
-			transplantNode(current, successor);
-			successor.setLeft(current.getLeft());
+			transplantNode(nodeToDelete, successor);
+			successor.setLeft(nodeToDelete.getLeft());
 			successor.getLeft().setParent(successor);
 		}
 	}
 	
-	private void transplantNode(BSTreeNode current, BSTreeNode successor) {		//algorithm from Cormen
-		if(current.getParent() == null) root = successor;
-		else if(current == current.getParent().getLeft()) current.getParent().setLeft(successor);
-		else current.getParent().setRight(successor);
-		if(successor != null) successor.setParent(current.getParent());
+	private void transplantNode(BSTreeNode nodeToDelete, BSTreeNode successor) {		//algorithm from Cormen
+		if(nodeToDelete.getParent() == null) root = successor;
+		else if(nodeToDelete == nodeToDelete.getParent().getLeft()) nodeToDelete.getParent().setLeft(successor);	//checks if nodeToDelete is parent's left or right child
+		else nodeToDelete.getParent().setRight(successor);	//if(nodeToDelete == nodeToDelete.getParent().getRight()) 
+		if(successor != null) successor.setParent(nodeToDelete.getParent());
 	}
 	
-	public void delete(int i ) {	//my algorithm - not finished
-		BSTreeNode current = findValue(i);
-		if(current.hasNoChildren()) {		//procedure for nodes without children
-			deleteNodeWithoutChildren(current);
+	public void delete(int i ) {	//my algorithm - not finished --> it's a bit complicated and doesn't set references correctly --> abandon for now
+		BSTreeNode nodeToDelete = findValue(i);
+		if(nodeToDelete.hasNoChildren()) {			//procedure for nodes without children
+			deleteNodeWithoutChildren(nodeToDelete);
 		}
-		if(current.hasOneChild()) {			//procedure for nodes with one child
-			deleteNodeWithOneChild(current);
+		if(nodeToDelete.hasOneChild()) {			//procedure for nodes with one child
+			deleteNodeWithOneChild(nodeToDelete);
 		}
-		else {
-			BSTreeNode successor = findSuccessor(current);
-			if(current.getRight() == successor){		//in case successor is current's right child (hasn't got left child)
-				BSTreeNode parent = current.getParent();
+		else {								//procedure for nodes with two children
+			BSTreeNode successor = findSuccessor(nodeToDelete);
+			if(nodeToDelete.getRight() == successor){		//in case successor is current's right child (hasn't got left child)
+				BSTreeNode parent = nodeToDelete.getParent();
 				if(parent == null) {		//in case searched for value is root of BSTree
-					successor.setLeft(current.getLeft());
+					successor.setLeft(nodeToDelete.getLeft());
 					root = successor;
 				}else{						//in case searched for value has a parent (isn't root of BSTree)
-					successor.setLeft(current.getLeft());		//TODO:	double check: doesn't work entirely!!!
+					successor.setLeft(nodeToDelete.getLeft());		//TODO:	double check: doesn't work entirely!!!
 					parent.setRight(successor);
 				}
-			}else {
+			}else{
 				
 			}
 		}
 		
 	}
 	
-	private void deleteNodeWithOneChild(BSTreeNode current) {
-		BSTreeNode parent = current.getParent();
-		if(parent == null) {	//in case the root has only one child (two nodes in BSTree)
-			if(current.getLeft() != null) root = current.getLeft();			//set root to a left child
-			if(current.getRight() != null) root = current.getRight();		//set root to a right child
+	private void deleteNodeWithoutChildren(BSTreeNode nodeToDelete) {
+		BSTreeNode parent = nodeToDelete.getParent();
+		if(parent == null) root = null;		//in case there is only one node(root) with searched for value
+		if(parent.getLeft() == nodeToDelete) parent.setLeft(null); 
+		else parent.setRight(null);
+	}
+	
+	private void deleteNodeWithOneChild(BSTreeNode nodeToDelete) {
+		BSTreeNode parent = nodeToDelete.getParent();
+		if(parent == null) {																	//in case the root has only one child (two nodes in BSTree)
+			if(nodeToDelete.getLeft() != null) root = nodeToDelete.getLeft();					//set root to a left child
+			if(nodeToDelete.getRight() != null) root = nodeToDelete.getRight();					//set root to a right child
 		}
 		else {
-			if(parent.getRight() == current) {			//current is parent's right child
-				if(current.getRight() != null) parent.setRight(current.getRight()); //refer parent right to current right child (delete current)
-				else parent.setRight(current.getLeft());							//refer parent right to current left child (delete current)
+			if(parent.getRight() == nodeToDelete) {												//current is parent's right child
+				if(nodeToDelete.getRight() != null) {
+					parent.setRight(nodeToDelete.getRight()); 									//refer parent right to nodeToDelete right child
+					nodeToDelete.getRight().setParent(parent); 									//and nodeToDelete right child to parent (no references to nodeToDelete)
+				}
+				else {
+					parent.setRight(nodeToDelete.getLeft());									//refer parent right to current left child (delete current)
+					nodeToDelete.getLeft().setParent(parent);
+				}
 			}
-			if(parent.getLeft() == current) {			//current is parent's left child
-				if(current.getLeft() != null) parent.setLeft(current.getLeft());	//refer parent left to current left child (delete current)
-				else parent.setLeft(current.getRight());							//refer parent left to current right child (delete current)
+			if(parent.getLeft() == nodeToDelete) {												//current is parent's left child
+				if(nodeToDelete.getLeft() != null) {
+					parent.setLeft(nodeToDelete.getLeft());										//refer parent left to current left child (delete current)
+					nodeToDelete.getLeft().setParent(parent);
+				}
+				else {
+					parent.setLeft(nodeToDelete.getRight());									//refer parent left to current right child (delete current)
+					nodeToDelete.getRight().setParent(parent);
+				}
 			}
 		}
 	}
 
-	private void deleteNodeWithoutChildren(BSTreeNode current) {
-		BSTreeNode parent = current.getParent();
-		if(parent == null) root = null;		//in case there is only one node(root) with searched for value
-		if(parent.getLeft() == current) parent.setLeft(null); 
-		else parent.setRight(null);
-	}
+	
 
 	///// CALCULATE SUM OF VALUES	//////////////////////////////////////////////////////////////////////////////////////////////
 	
@@ -300,6 +313,11 @@ public class BSTree {
 		else return current;
 	}
 	
+	/////	HEIGHT	/////////////////////////////////////////////////////////////////////////////////////////////////
+	public int getHeight(BSTreeNode current) {
+		if(current == null) return -1;
+		else return 1 + Math.max(getHeight(current.getLeft()), getHeight(current.getRight()));
+	}
 	
 }	
 	

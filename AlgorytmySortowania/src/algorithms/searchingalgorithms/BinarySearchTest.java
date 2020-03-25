@@ -1,4 +1,4 @@
-package algorithms.searchingalgorithms.binarysearch;
+package algorithms.searchingalgorithms;
 
 import logging.ArrayLogger;
 import logging.ValueLogger;

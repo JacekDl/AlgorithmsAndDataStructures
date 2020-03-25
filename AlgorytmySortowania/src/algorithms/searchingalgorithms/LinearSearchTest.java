@@ -1,10 +1,10 @@
-package algorithms.searchingalgorithms.betterlinear;
+package algorithms.searchingalgorithms;
 
 import logging.ArrayLogger;
 import logging.ValueLogger;
 import testdata.TestDataGenerator;
 
-public class BetterLinearTest {
+public class LinearSearchTest {
 
 	public static void main(String[] args) {
 
@@ -22,8 +22,9 @@ public class BetterLinearTest {
 		// Prints searched value.
 		ValueLogger.logValue(value);
 
-		BetterLinear next = new BetterLinear();
-		int answer = next.searchBetterLinearly(somelist, value);
+		// Creates new reference type LinearSearch and links it with object next.
+		LinearSearch next = new LinearSearch();
+		int answer = next.searchLinearly(somelist, value);
 		
 		// Prints result of search.
 		//TODO - move to logging package 

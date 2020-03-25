@@ -1,4 +1,4 @@
-package algorithms.searchingalgorithms.linearrecursion;
+package algorithms.searchingalgorithms;
 
 public class LinearRecursion {
 

@@ -8,8 +8,8 @@ public class BSTreeTester {
 		
 		//Test 1: create BSTree (add one Node)
 		BSTree firstTree = new BSTree();
-		firstTree.add(3);
-		//System.out.println(firstTree.root.getValue());
+		firstTree.add(10);
+		//System.out.println(firstTree.getRoot().getValue());
 		
 		//Test 2: add 2nd BSTreeNode(2)
 		firstTree.add(2);
@@ -33,8 +33,9 @@ public class BSTreeTester {
 		firstTree.add(9);
 		firstTree.add(4);
 		firstTree.add(6);
-		firstTree.add(2);
-		//System.out.println(firstTree.root.getRight().getLeft().getRight().getValue());
+		firstTree.add(20);
+		//System.out.println(firstTree.getRoot().getRight().getLeft().getRight().getValue());
+		//System.out.println(firstTree.getRoot().getRight().getLeft().getLeft().getValue());
 		
 		
 		
@@ -45,21 +46,23 @@ public class BSTreeTester {
 		//firstTree.sum();
 		
 		//Test 9: print values stored in BSTree (inorder)
-		firstTree.printValuesInorder(firstTree.getRoot());
+		//firstTree.printValuesInorder(firstTree.getRoot());
 		System.out.println();
 		
 		//Test 9.1: remove value
-		int myValue = 9;				//TODO: there is something wrong with values 3 (changes order of BST) and 5(StackOverflowError) 
+		/*int myValue = 5;				//TODO: there is something wrong with values 3 (changes order of BST - problem with deleteNode()) and 5(StackOverflowError - deleteNode() and no action delete()) 
 		firstTree.deleteNode(myValue);
 		firstTree.printValuesInorder(firstTree.getRoot());
 		System.out.println();
 		firstTree.add(myValue);
 		firstTree.printValuesInorder(firstTree.getRoot());
 		System.out.println();
+		//firstTree.delete(4);
+		//firstTree.delete(6);
 		firstTree.delete(myValue);
 		//System.out.println();
 		firstTree.printValuesInorder(firstTree.getRoot());
-		System.out.println();
+		System.out.println();*/
 		
 		
 		//Test 10: print values stored in BSTree (preorder)
@@ -75,7 +78,7 @@ public class BSTreeTester {
 		//Test 12: Create BSTree and fill it in with random numbers
 		BSTree secondTree = new BSTree();
 		TestDataGenerator generator = new TestDataGenerator();
-		secondTree.addValues(generator.generateRandomNumbers(50, 100));
+		secondTree.addValues(generator.generateRandomNumbers(40, 100));
 		
 		secondTree.printValuesInorder(secondTree.getRoot());
 		System.out.println();

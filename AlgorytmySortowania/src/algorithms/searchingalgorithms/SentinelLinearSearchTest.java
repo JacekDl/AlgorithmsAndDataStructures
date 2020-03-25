@@ -1,13 +1,12 @@
-package algorithms.searchingalgorithms.linear;
+package algorithms.searchingalgorithms;
 
 import logging.ArrayLogger;
 import logging.ValueLogger;
 import testdata.TestDataGenerator;
 
-public class LinearSearchTest {
+public class SentinelLinearSearchTest {
 
 	public static void main(String[] args) {
-
 		// Generates list of random values.
 		TestDataGenerator generator = new TestDataGenerator();
 		int[] somelist = generator.generateRandomNumbers(20, 100);
@@ -22,14 +21,14 @@ public class LinearSearchTest {
 		// Prints searched value.
 		ValueLogger.logValue(value);
 
-		// Creates new reference type LinearSearch and links it with object next.
-		LinearSearch next = new LinearSearch();
-		int answer = next.searchLinearly(somelist, value);
-		
-		// Prints result of search.
-		//TODO - move to logging package 
-		if (answer >= 0) {
-			System.out.print("Searched value position number:  " + answer);
+		// Creates reference type SentinelLinearSearch and links it with new object
+		// 'next'.
+		SentinelLinearSearch next = new SentinelLinearSearch();
+		int answer = next.searchLinearlyWithSentinel(somelist, value);
+
+		// Prints results of search.
+		if (answer < somelist.length - 1 || somelist[somelist.length - 1] == value) {
+			System.out.print("Searched value position number: " + answer);
 		} else {
 			System.out.print("Searched value is not on the list.");
 		}

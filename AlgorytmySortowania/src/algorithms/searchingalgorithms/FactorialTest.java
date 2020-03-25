@@ -1,4 +1,4 @@
-package algorithms.searchingalgorithms.factorial;
+package algorithms.searchingalgorithms;
 
 public class FactorialTest {
 
