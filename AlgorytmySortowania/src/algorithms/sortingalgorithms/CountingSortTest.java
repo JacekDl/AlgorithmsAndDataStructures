@@ -1,4 +1,4 @@
-package algorithms.sortingalgorithms.countingsort;
+package algorithms.sortingalgorithms;
 
 import logging.ArrayLogger;
 import testdata.TestDataGenerator;

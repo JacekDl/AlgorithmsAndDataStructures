@@ -1,4 +1,4 @@
-package algorithms.sortingalgorithms.insertionsort;
+package algorithms.sortingalgorithms;
 
 //import binarysearch.BinarySearch;
 import logging.ArrayLogger;

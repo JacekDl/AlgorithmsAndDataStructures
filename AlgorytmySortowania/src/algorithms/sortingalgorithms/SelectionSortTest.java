@@ -1,4 +1,4 @@
-package algorithms.sortingalgorithms.selectionsort;
+package algorithms.sortingalgorithms;
 
 import algorithms.searchingalgorithms.BinarySearch;
 import algorithms.searchingalgorithms.binarysearch.*;

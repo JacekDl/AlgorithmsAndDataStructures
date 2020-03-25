@@ -1,4 +1,4 @@
-package algorithms.sortingalgorithms.bucketsort;
+package algorithms.sortingalgorithms;
 
 import datastructures.lists.LinkedList;
 

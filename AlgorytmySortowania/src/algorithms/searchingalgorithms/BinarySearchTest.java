@@ -2,6 +2,7 @@ package algorithms.searchingalgorithms;
 
 import logging.ArrayLogger;
 import logging.ValueLogger;
+import algorithms.sortingalgorithms.SelectionSort;
 import algorithms.sortingalgorithms.selectionsort.*;
 import testdata.TestDataGenerator;
 
